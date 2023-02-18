@@ -1,0 +1,36 @@
+.Bench {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.Bench_benchslot {
+    border: solid 1px #000000;
+    display: grid;
+}
+
+.BenchUnit {
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+    margin: 1rem;
+}
+
+.BenchUnit_imageContainer {
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.BenchUnit_image {
+    position: absolute;
+    top: -50%;
+    justify-self: center;
+    border-radius: 4rem;
+}
+
+.BenchUnit_nameplateContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px #000000;
+    border-radius: 2rem;
+}

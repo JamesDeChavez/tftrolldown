@@ -1,0 +1,5 @@
+.Percentages {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px #000000;
+}

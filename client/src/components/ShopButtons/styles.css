@@ -1,0 +1,11 @@
+.ShopButtons {
+    display: grid;
+    grid-template-rows: 1fr 1fr;   
+}
+
+.ShopButtons_buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    border: solid 1px #000000;
+}
