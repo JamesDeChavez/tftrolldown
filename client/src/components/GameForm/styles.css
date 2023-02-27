@@ -7,9 +7,27 @@
 
 .GameForm_header{
     text-align: center;
+    color: #FFFFFF;
 }
 
-.GameForm_levelcontainer {
+.GameForm_label,
+.GameForm_number {
+    color: #FFFFFF;
+}
+
+.GameForm_inputContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+}
+
+.GameForm_buttonsContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.GameForm_formButtonsContainer {
+    display: flex;
+    place-content: center;
+    gap: 2rem;
 }

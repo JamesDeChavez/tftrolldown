@@ -1,14 +1,24 @@
+import { useContext } from 'react'
+import Unit from './Unit'
+import EmptyUnit from './EmptyUnit'
+import { GameContext } from '../../App'
 import './styles.css'
-import Unit from './unit'
 
 const ShopUnits = () => {
-    const className = 'ShopUnits'
+    const { champShop } = useContext(GameContext)
 
+    const className = 'ShopUnits'
     return (
         <div className={className}>
-            {[...Array(5).keys()].map((n) => {
-                return <Unit/>
-            })}        
+            {champShop.length ?            
+                champShop.map((champ, i) => {
+                    return <Unit champData={champ} key={i} index={i} />
+                })
+            :
+                Array(5).fill(0).map((_, i) => {
+                    return <EmptyUnit key={i} />
+                })
+            }        
         </div>
     )
 }

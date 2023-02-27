@@ -3,15 +3,12 @@
     grid-template-columns: repeat(9, 1fr);
 }
 
-.Bench_benchslot {
-    border: solid 1px #000000;
-    display: grid;
-}
 
 .BenchUnit {
     display: grid;
     grid-template-rows: 8fr 2fr;
-    margin: 1rem;
+    border: solid 1px #000000;
+    display: grid;
 }
 
 .BenchUnit_imageContainer {

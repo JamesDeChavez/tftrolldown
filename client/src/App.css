@@ -1,4 +1,4 @@
-body {
+body, p {
     margin: 0;
 }
 
@@ -48,5 +48,4 @@ body {
 
 .ShopContainer {
     grid-template-columns: 1fr 5fr;
-    text-align: center;
 }

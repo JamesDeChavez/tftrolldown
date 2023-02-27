@@ -1,0 +1,58 @@
+{
+    "level-2": {
+        "one-cost": 1,
+        "two-cost": 0,
+        "three-cost": 0,
+        "four-cost": 0,
+        "five-cost": 0
+    },
+    "level-3": {
+        "one-cost": 0.75,
+        "two-cost": 0.25,
+        "three-cost": 0,
+        "four-cost": 0,
+        "five-cost": 0
+    },
+    "level-4": {
+        "one-cost": 0.55,
+        "two-cost": 0.3,
+        "three-cost": 0.15,
+        "four-cost": 0,
+        "five-cost": 0
+    },
+    "level-5": {
+        "one-cost": 0.45,
+        "two-cost": 0.33,
+        "three-cost": 0.2,
+        "four-cost": 0.02,
+        "five-cost": 0
+    },
+    "level-6": {
+        "one-cost": 0.25,
+        "two-cost": 0.4,
+        "three-cost": 0.3,
+        "four-cost": 0.05,
+        "five-cost": 0
+    },
+    "level-7": {
+        "one-cost": 0.19,
+        "two-cost": 0.3,
+        "three-cost": 0.35,
+        "four-cost": 0.15,
+        "five-cost": 0.01
+    },
+    "level-8": {
+        "one-cost": 0.16,
+        "two-cost": 0.2,
+        "three-cost": 0.35,
+        "four-cost": 0.25,
+        "five-cost": 0.04
+    },
+    "level-9": {
+        "one-cost": 0.09,
+        "two-cost": 0.15,
+        "three-cost": 0.3,
+        "four-cost": 0.3,
+        "five-cost": 0.16
+    }
+}

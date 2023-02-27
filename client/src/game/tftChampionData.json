@@ -1,0 +1,542 @@
+[
+    {
+        "name": "Sylas",
+        "traits": [
+            "Anima Squad",
+            "Renegade"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Sylas.TFT_Set8.dds"
+    },
+    {
+        "name": "Nasus",
+        "traits": [
+            "Anima Squad",
+            "Mascot"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Nasus.TFT_Set8.dds"
+    },
+    {
+        "name": "Jinx",
+        "traits": [
+            "Anima Squad",
+            "Prankster"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Jinx.TFT_Set8.dds"
+    },
+    {
+        "name": "Vayne",
+        "traits": [
+            "Anima Squad",
+            "Recon",
+            "Duelist"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Vayne.TFT_Set8.dds"
+    },
+    {
+        "name": "Riven",
+        "traits": [
+            "Anima Squad",
+            "Brawler",
+            "Defender"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Riven.TFT_Set8.dds"
+    },
+    {
+        "name": "Miss Fortune",
+        "traits": [
+            "Anima Squad",
+            "Ace"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_MissFortune.TFT_Set8.dds"
+    },
+    {
+        "name": "Galio",
+        "traits": [
+            "Civilian",
+            "Mascot"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Galio.TFT_Set8.dds"
+    },
+    {
+        "name": "Sivir",
+        "traits": [
+            "Civilian",
+            "Sureshot"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Sivir.TFT_Set8.dds"
+    },
+    {
+        "name": "Janna",
+        "traits": [
+            "Civilian",
+            "Spellslinger",
+            "Forecaster"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Janna.TFT_Set8.dds"
+    },
+    {
+        "name": "Taliyah",
+        "traits": [
+            "Star Guardian",
+            "Spellslinger"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Taliyah.TFT_Set8.dds"
+    },
+    {
+        "name": "Lux",
+        "traits": [
+            "Star Guardian",
+            "Spellslinger"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Lux.TFT_Set8.dds"
+    },
+    {
+        "name": "Nilah",
+        "traits": [
+            "Star Guardian",
+            "Duelist"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Nilah.TFT_Set8.dds"
+    },
+    {
+        "name": "Kai'Sa",
+        "traits": [
+            "Star Guardian",
+            "Recon"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Kaisa.TFT_Set8.dds"
+    },
+    {
+        "name": "Rell",
+        "traits": [
+            "Star Guardian",
+            "Defender"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Rell.TFT_Set8.dds"
+    },
+    {
+        "name": "Ekko",
+        "traits": [
+            "Star Guardian",
+            "Prankster",
+            "Aegis"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Ekko.TFT_Set8.dds"
+    },
+    {
+        "name": "Syndra",
+        "traits": [
+            "Star Guardian",
+            "Heart"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Syndra.TFT_Set8.dds"
+    },
+    {
+        "name": "Sett",
+        "traits": [
+            "Mecha:PRIME",
+            "Defender"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Sett.TFT_Set8.dds"
+    },
+    {
+        "name": "Draven",
+        "traits": [
+            "Mecha:PRIME",
+            "Ace"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Draven.TFT_Set8.dds"
+    },
+    {
+        "name": "Leona",
+        "traits": [
+            "Mecha:PRIME",
+            "Renegade",
+            "Aegis"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Leona.TFT_Set8.dds"
+    },
+    {
+        "name": "Jax",
+        "traits": [
+            "Mecha:PRIME",
+            "Brawler"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Jax.TFT_Set8.dds"
+    },
+    {
+        "name": "Sejuani",
+        "traits": [
+            "LaserCorps",
+            "Brawler"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Sejuani.TFT_Set8.dds"
+    },
+    {
+        "name": "Ashe",
+        "traits": [
+            "LaserCorps",
+            "Recon"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Ashe.TFT_Set8.dds"
+    },
+    {
+        "name": "Senna",
+        "traits": [
+            "LaserCorps",
+            "Sureshot"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Senna.TFT_Set8.dds"
+    },
+    {
+        "name": "Zed",
+        "traits": [
+            "LaserCorps",
+            "Duelist",
+            "Hacker"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Zed.TFT_Set8.dds"
+    },
+    {
+        "name": "Mordekaiser",
+        "traits": [
+            "LaserCorps",
+            "Ace"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Mordekaiser.TFT_Set8.dds"
+    },
+    {
+        "name": "Annie",
+        "traits": [
+            "Gadgeteen",
+            "Ox Force",
+            "Spellslinger"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Annie.TFT_Set8.dds"
+    },
+    {
+        "name": "Fiora",
+        "traits": [
+            "Ox Force",
+            "Duelist"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Fiora.TFT_Set8.dds"
+    },
+    {
+        "name": "Alistar",
+        "traits": [
+            "Ox Force",
+            "Mascot",
+            "Aegis"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Alistar.TFT_Set8.dds"
+    },
+    {
+        "name": "Aphelios",
+        "traits": [
+            "Ox Force",
+            "Sureshot",
+            "Arsenal"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Aphelios.TFT_Set8.dds"
+    },
+    {
+        "name": "Viego",
+        "traits": [
+            "Ox Force",
+            "Renegade"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Viego.TFT_Set8.dds"
+    },
+    {
+        "name": "Kayle",
+        "traits": [
+            "Underground",
+            "Duelist"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Kayle.TFT_Set8.dds"
+    },
+    {
+        "name": "Vi",
+        "traits": [
+            "Underground",
+            "Brawler",
+            "Aegis"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Vi.TFT_Set8.dds"
+    },
+    {
+        "name": "Samira",
+        "traits": [
+            "Underground",
+            "Sureshot",
+            "Ace"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Samira.TFT_Set8.dds"
+    },
+    {
+        "name": "Sona",
+        "traits": [
+            "Underground",
+            "Spellslinger",
+            "Heart"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Sona.TFT_Set8.dds"
+    },
+    {
+        "name": "Lulu",
+        "traits": [
+            "Gadgeteen",
+            "Heart"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Lulu.TFT_Set8.dds"
+    },
+    {
+        "name": "Zoe",
+        "traits": [
+            "Gadgeteen",
+            "Prankster",
+            "Hacker"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Zoe.TFT_Set8.dds"
+    },
+    {
+        "name": "Nunu & Willump",
+        "traits": [
+            "Gadgeteen",
+            "Mascot"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Nunu.TFT_Set8.dds"
+    },
+    {
+        "name": "Blitzcrank",
+        "traits": [
+            "A.D.M.I.N.",
+            "Brawler"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Blitzcrank.TFT_Set8.dds"
+    },
+    {
+        "name": "Camille",
+        "traits": [
+            "A.D.M.I.N.",
+            "Renegade"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Camille.TFT_Set8.dds"
+    },
+    {
+        "name": "Gangplank",
+        "traits": [
+            "Supers",
+            "Duelist"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Gangplank.TFT_Set8.dds"
+    },
+    {
+        "name": "Lee Sin",
+        "traits": [
+            "Supers",
+            "Heart",
+            "Brawler"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_LeeSin.TFT_Set8.dds"
+    },
+    {
+        "name": "Malphite",
+        "traits": [
+            "Supers",
+            "Mascot"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Malphite.TFT_Set8.dds"
+    },
+    {
+        "name": "Vel'Koz",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Velkoz.TFT_Set8.dds"
+    },
+    {
+        "name": "Cho'Gath",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Chogath.TFT_Set8.dds"
+    },
+    {
+        "name": "Aurelion Sol",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_AurelionSol.TFT_Set8.dds"
+    },
+    {
+        "name": "Rammus",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Rammus.TFT_Set8.dds"
+    },
+    {
+        "name": "Bel'Veth",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_BelVeth.TFT_Set8.dds"
+    },
+    {
+        "name": "Zac",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Zac.TFT_Set8.dds"
+    },
+    {
+        "name": "Urgot",
+        "traits": [
+            "Threat"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Urgot.TFT_Set8.dds"
+    },
+    {
+        "name": "Fiddlesticks",
+        "traits": [
+            "Corrupted",
+            "Threat"
+        ],
+        "cost": 5,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Fiddlesticks.TFT_Set8.dds"
+    },
+    {
+        "name": "Yuumi",
+        "traits": [
+            "Star Guardian",
+            "Mascot",
+            "Heart"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Yuumi.TFT_Set8.dds"
+    },
+    {
+        "name": "Yasuo",
+        "traits": [
+            "LaserCorps",
+            "Duelist"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Yasuo.TFT_Set8.dds"
+    },
+    {
+        "name": "Poppy",
+        "traits": [
+            "Gadgeteen",
+            "Defender"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Poppy.TFT_Set8.dds"
+    },
+    {
+        "name": "Talon",
+        "traits": [
+            "Ox Force",
+            "Renegade"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Talon.TFT_Set8.dds"
+    },
+    {
+        "name": "Renekton",
+        "traits": [
+            "LaserCorps",
+            "Brawler"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Renekton.TFT_Set8.dds"
+    },
+    {
+        "name": "Wukong",
+        "traits": [
+            "Mecha:PRIME",
+            "Defender"
+        ],
+        "cost": 1,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_WuKong.TFT_Set8.dds"
+    },
+    {
+        "name": "Ezreal",
+        "traits": [
+            "Underground",
+            "Recon"
+        ],
+        "cost": 2,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Ezreal.TFT_Set8.dds"
+    },
+    {
+        "name": "Soraka",
+        "traits": [
+            "A.D.M.I.N.",
+            "Heart"
+        ],
+        "cost": 4,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Soraka.TFT_Set8.dds"
+    },
+    {
+        "name": "LeBlanc",
+        "traits": [
+            "A.D.M.I.N.",
+            "Spellslinger",
+            "Hacker"
+        ],
+        "cost": 3,
+        "icon": "ASSETS/UX/TFT/ChampionSplashes/TFT8_Leblanc.TFT_Set8.dds"
+    }
+]
