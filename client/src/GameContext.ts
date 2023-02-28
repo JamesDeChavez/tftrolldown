@@ -17,7 +17,11 @@ export const GameContext = React.createContext<{
     setChampBench: React.Dispatch<React.SetStateAction<(Unit|undefined)[]>>,
     gameActive: boolean,
     time: number,
-    setTime: React.Dispatch<React.SetStateAction<number>>
+    setTime: React.Dispatch<React.SetStateAction<number>>,
+    sellActive: boolean,
+    setSellActive: React.Dispatch<React.SetStateAction<boolean>>,
+    sellAreaHovered: boolean,
+    setSellAreaHovered: React.Dispatch<React.SetStateAction<boolean>>
   }>({
     level: 7,
     setLevel: () => {},
@@ -33,5 +37,9 @@ export const GameContext = React.createContext<{
     setChampBench: () => {},
     gameActive: false,
     time: 50,
-    setTime: () => {}
+    setTime: () => {},
+    sellActive: false,
+    setSellActive: () => {},
+    sellAreaHovered: false,
+    setSellAreaHovered: () => {}
   })

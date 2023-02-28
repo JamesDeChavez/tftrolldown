@@ -16,14 +16,17 @@ const Traits = () => {
     const className = 'Traits'
     return (
         <div className={className}>
-            {Object.keys(activeTraits).map(trait => {
-                return (
-                    <p>
-                        <span>{trait}</span>
-                        <span>{activeTraits[trait]}</span>
-                    </p>
-                )
-            })}
+            <h2 className={`${className}_header`}>Active Traits</h2>
+            <div className={`${className}_traitsContainer`}>    
+                {Object.keys(activeTraits).map(trait => {
+                    return (
+                        <p className={`${className}_trait`}>
+                            <span>{trait}</span>
+                            <span>{activeTraits[trait]}</span>
+                        </p>
+                    )
+                })}
+            </div>
         </div>
     )
 }

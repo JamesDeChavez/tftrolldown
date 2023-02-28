@@ -1,3 +1,19 @@
 .Traits {
-    border: solid 1px #000000;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: .5rem;
+    color: #FFFFFF;
+    background-color: #213847e0;
+    border: solid 1px #917a49;
+}
+
+.Traits_traitsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.Traits_trait {
+    display: grid;
 }

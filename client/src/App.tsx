@@ -11,6 +11,7 @@ import { Game, LevelRange, Unit } from './game/classes';
 import { GameContext } from './GameContext';
 import GameTimer from './components/GameTimer';
 import './App.css';
+import SellArea from './components/SellArea';
 
 const App = () => {
   const [level, setLevel] = useState<LevelRange>(7)
@@ -18,11 +19,12 @@ const App = () => {
   const [gold, setGold] = useState<number>(50)
   const [time, setTime] = useState<number>(50)
   const [champPool, setChampPool] = useState<Unit[]>([])
-  const [champShop, setChampShop] = useState<(Unit|undefined)[]>([])
+  const [champShop, setChampShop] = useState<(Unit|undefined)[]>(Array(5).fill(undefined))
   const [champBench, setChampBench] = useState<(Unit|undefined)[]>(Array(9).fill(undefined))
   const [gameActive, setGameActive] = useState(false)
+  const [sellActive, setSellActive] = useState(false)
+  const [sellAreaHovered, setSellAreaHovered] = useState(false)
   const timeRef = useRef<any>()
-
 
   const startGame = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
@@ -39,7 +41,6 @@ const App = () => {
     setGameActive(true)
     
     let intervalId = setInterval(() => {
-      console.log(timeRef.current)
       if (timeRef.current <= 0) {
         clearInterval(intervalId)
         setGameActive(false)
@@ -51,37 +52,31 @@ const App = () => {
     }, 1000)
   }
 
+  const handleKeydownEvent = (e: KeyboardEvent) => {
+    e.preventDefault()
+    if (!gameActive) return
+    if (e.key === 'd' && gold >= 2) {
+      const { newChampPool, newChampShop } = Game.refreshShop(champPool, champShop, level)
+      setChampPool(newChampPool)
+      setChampShop(newChampShop)
+      setGold(prevState => prevState - 2)
+    }
+    if (e.key === 'f' && gold >= 4 && level < 9) {
+      const { newLevel, newCumulativeLevel } = Game.buyXP(level, cumulativeLevel)
+      setLevel(newLevel)
+      setCumulativeLevel(newCumulativeLevel)
+      setGold(prevState => prevState - 4)
+    }
+  }
+
   useEffect(() => {
-    console.log('Total Units',
-      champPool.length + 
-      champShop.filter(champ => champ !== undefined).length +
-      champBench.filter(champ => champ !== undefined).length
-    )
+    window.addEventListener('keydown', handleKeydownEvent)
+    return () => window.removeEventListener('keydown', handleKeydownEvent)
   })
 
   useEffect(() => {
     timeRef.current = time
   }, [time])
-
-  useEffect(() => {
-    if(!gameActive) return
-    console.log('Pool Size: ', champPool.length)    
-  }, [champPool])
-  
-  useEffect(() => {
-    if(!gameActive) return
-    console.log('Shop Size:', champShop.filter(champ => champ !== undefined).length) 
-  }, [champShop])
-
-  useEffect(() => {
-    if(!gameActive) return
-    console.log('Bench Size:', champBench.filter(champ => champ !== undefined).length)   
-  }, [champBench])
-
-  useEffect(() => {
-    if(!gameActive) return
-    console.log(cumulativeLevel)    
-  }, [cumulativeLevel])
 
   return (
     <GameContext.Provider value={{
@@ -92,7 +87,9 @@ const App = () => {
       champShop, setChampShop,
       champBench, setChampBench,
       gameActive,
-      time, setTime
+      time, setTime,
+      sellActive, setSellActive,
+      sellAreaHovered, setSellAreaHovered
     }}>
       <div className="App">
         <GameTimer time={time} gameActive={gameActive} />
@@ -115,7 +112,11 @@ const App = () => {
           </div>
           <div className='ShopContainer'>
             <ShopButtons/>
-            <ShopUnits/>
+            {!sellActive ?
+              <ShopUnits />
+            :
+              <SellArea setSellAreaHovered={setSellAreaHovered} />
+            }
           </div>
         </div>
       </div>

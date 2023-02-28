@@ -1,5 +1,31 @@
 .Percentages {
     display: flex;
     justify-content: space-around;
-    border: solid 1px #000000;
+    border: solid 1px #917a49;
+    background-color: #213847;
+    padding: .5rem;
+}
+
+.Percentages > p:nth-child(1) {
+    color: lightgrey
+}
+
+
+.Percentages > p:nth-child(2) {
+    color: green
+}
+
+
+.Percentages > p:nth-child(3) {
+    color: lightskyblue
+}
+
+
+.Percentages > p:nth-child(4) {
+    color: magenta
+}
+
+
+.Percentages > p:nth-child(5) {
+    color: orange
 }

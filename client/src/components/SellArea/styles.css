@@ -1,0 +1,13 @@
+.SellArea {
+    display: grid;
+    place-content: center;
+    border: solid 1px #917a49;
+    background-color: #213847;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    z-index: 3;
+}
+
+.SellArea:hover {
+    opacity: .5;
+}

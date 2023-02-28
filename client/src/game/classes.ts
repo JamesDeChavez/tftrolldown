@@ -1,6 +1,6 @@
 import championData from './tftChampionData.json'
-import rollOddsData from './rollodds.json'
-import levelsData from './levels.json'
+import traitMinimumsData from './tftTraitMinimumsData.json'
+import { levelsData, rollOddsData, numOfCopiesPerUnitCost } from './manualData'
 
 export class Unit {
     name: string
@@ -24,16 +24,14 @@ export class Game {
 
         championData.forEach(champ => {
             switch(champ.cost) {
-                case 1: copiesToAdd = 29; break;
-                case 2: copiesToAdd = 22; break;
-                case 3: copiesToAdd = 18; break;
-                case 4: copiesToAdd = 12; break;
-                case 5: copiesToAdd = 10; break;
+                case 1: copiesToAdd = numOfCopiesPerUnitCost[1]; break;
+                case 2: copiesToAdd = numOfCopiesPerUnitCost[2]; break;
+                case 3: copiesToAdd = numOfCopiesPerUnitCost[3]; break;
+                case 4: copiesToAdd = numOfCopiesPerUnitCost[4]; break;
+                case 5: copiesToAdd = numOfCopiesPerUnitCost[5]; break;
                 default: break;
-                
             }
             startingDeck.push(...Array(copiesToAdd).fill(new Unit(champ.name, champ.traits, champ.cost, 1)))
-            console.log(startingDeck)
         })
 
         return startingDeck
@@ -192,16 +190,47 @@ export class Game {
 
     static determineActiveTraits(bench: (Unit|undefined)[]) {
         const newActiveTraits: any = {}
+        const unitsAlreadySeen: any = {}
+        
+        // Determine how many of each trait you have on your bench
         bench.forEach(unit => {
             if(!unit) return
+            if(unit.name in unitsAlreadySeen) return
+            else unitsAlreadySeen[unit.name] = true
+
             unit.traits.forEach(trait => {
                 if(trait in newActiveTraits) newActiveTraits[trait]++
                 else newActiveTraits[trait] = 1
             })
         })
+
+        // Update your active traits based on the trait minimums
+        Object.keys(newActiveTraits).forEach(trait => {
+            let countYouHave = newActiveTraits[trait]
+            let relevantMinimums: any[] = []
+
+            traitMinimumsData.forEach(traitMin => {
+                if (traitMin.name === trait) relevantMinimums = traitMin.effects
+            })
+
+            let failCount = 0
+
+            relevantMinimums.forEach((minimum) => {
+                
+                if (countYouHave >= minimum.minUnits && countYouHave <= minimum.maxUnits) {
+                    newActiveTraits[trait] = minimum.minUnits
+                } else failCount++
+
+                if (failCount === relevantMinimums.length) delete newActiveTraits[trait]
+
+            })
+
+        })
+
         return newActiveTraits
     }
 
 }
 
 export type LevelRange = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+export type CostRange = 1 | 2 | 3 | 4 | 5

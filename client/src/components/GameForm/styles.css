@@ -1,7 +1,7 @@
 .GameForm {
     width: 100%;
-    background-color: blue;
-    border: solid 1px #000000;
+    background-color: #213847e0;
+    border: solid 1px #917a49;
     z-index: 2;
     display: grid;
     grid-template-rows: auto repeat(4, 1fr);
@@ -21,7 +21,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    padding: 0 2rem;
 }
 
 .GameForm_buttonsContainer {

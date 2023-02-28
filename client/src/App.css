@@ -4,33 +4,40 @@
     box-sizing: border-box;
 }
 
-body, h1, p {
+body, h1, h2, p {
     margin: 0;
 }
 
 .App {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 3fr 2fr;
+    background-image: url('./assets/map.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    gap: .5rem;
+    padding: 1rem;
 }
 
 .UpperSection {
     display: grid;
     grid-template-columns: 1fr 8fr;
+    gap: 1rem;
 }
 
 .TraitsContainer,
 .GameFormContainer {
     display: grid;
     place-content: center;
-    padding: 1rem;    
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
 
 .LowerSection {
     display: grid;
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-rows: 1fr auto 2fr;
+    row-gap: .2rem;
     padding: 0 7%;
 }
 
@@ -50,8 +57,10 @@ body, h1, p {
 .DashboardContainer {
     grid-template-columns: 1fr 1.5fr 1fr 2.5fr;
     text-align: center;
+    gap: .2rem;
 }
 
 .ShopContainer {
     grid-template-columns: 1fr 5fr;
+    gap: .2rem;
 }

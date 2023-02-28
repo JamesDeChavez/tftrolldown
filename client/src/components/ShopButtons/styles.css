@@ -1,11 +1,37 @@
 .ShopButtons {
     display: grid;
-    grid-template-rows: 1fr 1fr;   
+    grid-template-rows: 1fr 1fr;
+    gap: .2rem  
 }
 
-.ShopButtons_buttonContainer {
+.ShopButtons_buyXPContainer,
+.ShopButtons_refreshContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-content: center;
-    border: solid 1px #000000;
+    color: #FFFFFF;
+    place-items: center;
+}
+
+.ShopButtons_buyXPContainer{
+    border: solid 3px #917a49;
+    background-color: #213847;
+}
+
+.ShopButtons_refreshContainer {
+    border: solid 3px #0f1c24;
+    background-color: #45412b;
+}
+
+.ShopButtons_buyXPContainer:hover,
+.ShopButtons_refreshContainer:hover {
+    cursor: pointer;
+}
+
+.ShopButtons_buyXPContainer:hover{
+    background-color: #5b93ff;
+}
+
+.ShopButtons_refreshContainer:hover {
+    background-color: #c1b383;
 }

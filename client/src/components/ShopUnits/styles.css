@@ -1,16 +1,28 @@
 .ShopUnits {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: .2rem;
 }
 
+.Unit_empty,
 .Unit {
     display: grid;
     grid-template-rows: 8fr 2fr;
+    color: #FFFFFF;
+}
+
+.Unit:hover {
+    cursor: pointer;
+    opacity: 50%;
 }
 
 .Unit_imageContainer {
     position: relative;
-    border: solid 1px #000000;
+}
+
+.Unit_image {
+    height: 100%;
+    width: 100%;
 }
 
 .Unit_traitsContainer {
@@ -23,5 +35,4 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: solid 1px #000000;
 }

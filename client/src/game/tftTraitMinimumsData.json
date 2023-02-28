@@ -1,0 +1,433 @@
+[
+    {
+        "name": "Civilian",
+        "effects": [
+            {
+                "minUnits": 1,
+                "maxUnits": 1
+            },
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            },
+            {
+                "minUnits": 3,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "A.D.M.I.N.",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Anima Squad",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 6
+            },
+            {
+                "minUnits": 7,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "LaserCorps",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 6
+            },
+            {
+                "minUnits": 7,
+                "maxUnits": 8
+            },
+            {
+                "minUnits": 9,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Brawler",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 7
+            },
+            {
+                "minUnits": 8,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Mecha:PRIME",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Threat",
+        "effects": [
+            {
+                "minUnits": 1,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Mascot",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 7
+            },
+            {
+                "minUnits": 8,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Forecaster",
+        "effects": [
+            {
+                "minUnits": 1,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Ace",
+        "effects": [
+            {
+                "minUnits": 1,
+                "maxUnits": 1
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 4
+            }
+        ]
+    },
+    {
+        "name": "Duelist",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 7
+            },
+            {
+                "minUnits": 8,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Ox Force",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 7
+            },
+            {
+                "minUnits": 8,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Arsenal",
+        "effects": [
+            {
+                "minUnits": 1,
+                "maxUnits": 1
+            }
+        ]
+    },
+    {
+        "name": "Aegis",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            },
+            {
+                "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Underground",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Star Guardian",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 6
+            },
+            {
+                "minUnits": 7,
+                "maxUnits": 8
+            },
+            {
+                "minUnits": 9,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Prankster",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            },
+            {
+                "minUnits": 3,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Heart",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Corrupted",
+        "effects": [
+            {
+                "minUnits": 1,
+                "maxUnits": 1
+            }
+        ]
+    },
+    {
+        "name": "Supers",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Renegade",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Spellslinger",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 7
+            },
+            {
+                "minUnits": 8,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Recon",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            },
+            {
+                "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 999
+            }
+        ]
+    },
+    {
+        "name": "Sureshot",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Defender",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 5
+            },
+            {
+                "minUnits": 6,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Gadgeteen",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "Hacker",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            },
+            {
+                "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 25000
+            }
+        ]
+    }
+]

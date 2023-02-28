@@ -1,4 +1,39 @@
-{
+export const levelsData = {
+    "level-2": {
+        "points": 2,
+        "cumulative": 2
+    },
+    "level-3": {
+        "points": 6,
+        "cumulative": 8
+    },
+    "level-4": {
+        "points": 10,
+        "cumulative": 18
+    },
+    "level-5": {
+        "points": 20,
+        "cumulative": 38
+    },
+    "level-6": {
+        "points": 36,
+        "cumulative": 74
+    },
+    "level-7": {
+        "points": 56,
+        "cumulative": 130
+    },
+    "level-8": {
+        "points": 80,
+        "cumulative": 210
+    },
+    "level-9": {
+        "points": 0,
+        "cumulative": 210
+    }
+}
+
+export const rollOddsData = {
     "level-2": {
         "one-cost": 1,
         "two-cost": 0,
@@ -55,4 +90,12 @@
         "four-cost": 0.3,
         "five-cost": 0.16
     }
+}
+
+export const numOfCopiesPerUnitCost = {
+    1: 29,
+    2: 22,
+    3: 18,
+    4: 12,
+    5: 10
 }

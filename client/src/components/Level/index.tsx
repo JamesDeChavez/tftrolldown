@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { GameContext } from '../../GameContext'
-import levelsData from '../../game/levels.json'
+import { levelsData } from '../../game/manualData'
 import './styles.css'
 
 const Level = () => {

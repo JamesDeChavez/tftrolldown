@@ -27,11 +27,11 @@ const ShopButtons = () => {
     const className = 'ShopButtons'
     return (
         <div className={className}>
-            <div className={`${className}_buttonContainer`} onClick={handleBuyXPClick}>
+            <div className={`${className}_buyXPContainer`} onClick={handleBuyXPClick}>
                 <p>Buy XP</p>
                 <p>4 G</p> 
             </div>
-            <div className={`${className}_buttonContainer`} onClick={handleRefreshClick}>
+            <div className={`${className}_refreshContainer`} onClick={handleRefreshClick}>
                 <p>Refresh</p> 
                 <p>2 G</p> 
             </div>

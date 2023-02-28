@@ -1,14 +1,22 @@
 .Bench {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
+    gap: .2rem;
 }
 
-
+.BenchUnit_empty,
 .BenchUnit {
     display: grid;
     grid-template-rows: 8fr 2fr;
-    border: solid 1px #000000;
+    border: solid 1px #0f1c24;
     display: grid;
+    background-color: #b5a775;
+    z-index: 2;
+}
+
+.BenchUnit:hover {
+    cursor: pointer;
+    opacity: 50%;
 }
 
 .BenchUnit_imageContainer {
@@ -19,8 +27,13 @@
 
 .BenchUnit_image {
     position: absolute;
-    top: -50%;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1/1;
+    top: -70%;
     justify-self: center;
+    object-fit: cover;
+    object-position: right;
     border-radius: 4rem;
 }
 
