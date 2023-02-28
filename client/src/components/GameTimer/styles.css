@@ -1,0 +1,12 @@
+.GameTimer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: blue;
+    border: solid 1px #000000;
+}
+
+.GameTimer_text {
+    color: #FFFFFF;
+    padding: 1rem;
+}

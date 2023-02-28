@@ -1,12 +1,15 @@
+import { useContext } from 'react'
+import { GameContext } from '../../GameContext'
 import './styles.css'
 
 const Gold = () => {
-    
+    const { gold } = useContext(GameContext)
+
     const className = 'Gold'
 
     return (
         <div className={className}>
-            <span>50 G</span>
+            <p>{`${gold} G`}</p>
         </div>
     )
 }

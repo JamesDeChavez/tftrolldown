@@ -1,25 +1,27 @@
 import { useContext } from 'react'
-import { GameContext } from '../../App'
+import { GameContext } from '../../GameContext'
 import { Game } from '../../game/classes'
 import './styles.css'
 
 const ShopButtons = () => {
-    const { level, setLevel, cumulativeLevel, setCumulativeLevel, champPool, setChampPool, champShop, setChampShop, gameActive } = useContext(GameContext)
+    const { level, setLevel, cumulativeLevel, setCumulativeLevel, champPool, setChampPool, champShop, setChampShop, gameActive, gold, setGold } = useContext(GameContext)
     
     const handleRefreshClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
+        if (!gameActive || gold < 2) return
         const { newChampPool, newChampShop } = Game.refreshShop(champPool, champShop, level)
         setChampPool(newChampPool)
         setChampShop(newChampShop)
+        setGold(prevState => prevState - 2)
     }
 
     const handleBuyXPClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
-        if (!gameActive || level === 9) return
+        if (!gameActive || level === 9 || gold < 4) return
         const { newLevel, newCumulativeLevel } = Game.buyXP(level, cumulativeLevel)
-        console.log(newLevel, newCumulativeLevel)
         setLevel(newLevel)
         setCumulativeLevel(newCumulativeLevel)
+        setGold(prevState => prevState - 4)
     }
 
     const className = 'ShopButtons'

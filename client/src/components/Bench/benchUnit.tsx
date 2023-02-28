@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { GameContext } from '../../App'
+import { GameContext } from '../../GameContext'
 import image from '../../assets/face.png'
 import { Game, Unit } from '../../game/classes'
 import './styles.css'
@@ -10,14 +10,24 @@ interface Props {
 }
 
 const BenchUnit: React.FC<Props> = ({champData, index}) => {
-    const { champPool, setChampPool, champBench, setChampBench } = useContext(GameContext)
+    const { champPool, setChampPool, champBench, setChampBench, setGold, gameActive } = useContext(GameContext)
 
     const sellUnit = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
-        if (!champData) return
+        if (!champData || !gameActive) return
+
+        console.log('cost', champData.cost)
+        console.log('stars', champData.stars)        
+
+        let goldReceived = champData.cost * Math.pow(3, champData.stars - 1)
+
+        if (champData.stars >= 2) goldReceived-- 
+
         const { newBench, newChampPool} =  Game.sellUnit(champPool, champBench, index)
+        
+        setGold(prevState => prevState + goldReceived)
         setChampBench(newBench)
-        setChampPool(newChampPool)
+        setChampPool(newChampPool)        
     }
 
     const className = 'BenchUnit'

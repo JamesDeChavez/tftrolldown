@@ -6,11 +6,13 @@ export class Unit {
     name: string
     traits: string[]
     cost: number
+    stars: number
 
-    constructor (_name: string, _traits: string[], _cost: number ) {
+    constructor (_name: string, _traits: string[], _cost: number, _stars: number ) {
         this.name = _name
         this.traits = _traits
         this.cost = _cost
+        this.stars = _stars
     }
 }
 
@@ -18,9 +20,22 @@ export class Game {
 
     static createStartingDeck() {
         const startingDeck: Unit[] = []
+        let copiesToAdd: number = 1 
+
         championData.forEach(champ => {
-            startingDeck.push(new Unit(champ.name, champ.traits, champ.cost))
+            switch(champ.cost) {
+                case 1: copiesToAdd = 29; break;
+                case 2: copiesToAdd = 22; break;
+                case 3: copiesToAdd = 18; break;
+                case 4: copiesToAdd = 12; break;
+                case 5: copiesToAdd = 10; break;
+                default: break;
+                
+            }
+            startingDeck.push(...Array(copiesToAdd).fill(new Unit(champ.name, champ.traits, champ.cost, 1)))
+            console.log(startingDeck)
         })
+
         return startingDeck
     }
 
@@ -98,8 +113,45 @@ export class Game {
     static buyUnit(champShop: (Unit|undefined)[], champBench: (Unit|undefined)[], purchaseIndex: number) {
         const replacementIndex = champBench.indexOf(undefined)
         const newBench = [...champBench]
-        newBench[replacementIndex] = champShop[purchaseIndex]
         const newShop = [...champShop]
+
+        const unitToPurchase = champShop[purchaseIndex]
+        const checkForLevelTwo = champBench.filter(unit => 
+            unit && 
+            unit.name === unitToPurchase!.name &&
+            unit.stars === 1 
+        ).length === 2
+        const checkForLevelThree = (checkForLevelTwo &&
+        champBench.filter(unit => 
+            unit && 
+            unit.name === unitToPurchase!.name &&
+            unit.stars === 2 
+        ).length === 2)
+        
+        if (checkForLevelThree) {
+            const indexesToRemove = newBench.reduce((callback: number[], unit, index) => {
+                if (unit && unit!.name === unitToPurchase!.name) callback.push(index)
+                return callback
+            }, []).sort((a, b) => b - a)
+            let currentIndex = indexesToRemove.pop()
+            newBench[currentIndex!] = new Unit(unitToPurchase!.name, unitToPurchase!.traits, unitToPurchase!.cost, 3)
+            while (indexesToRemove.length > 0) {
+                currentIndex = indexesToRemove.pop()
+                newBench[currentIndex!] = undefined
+            }
+        } else if (checkForLevelTwo) {
+            const indexesToRemove = newBench.reduce((callback: number[], unit, index) => {
+                if (unit && unit.name === unitToPurchase!.name && unit.stars === 1) callback.push(index)
+                return callback
+            }, []).sort((a, b) => b - a)
+            let currentIndex = indexesToRemove.pop()
+            newBench[currentIndex!] = new Unit(unitToPurchase!.name, unitToPurchase!.traits, unitToPurchase!.cost, 2)
+            while (indexesToRemove.length > 0) {
+                currentIndex = indexesToRemove.pop()
+                newBench[currentIndex!] = undefined
+            }
+        } else newBench[replacementIndex] = champShop[purchaseIndex]
+
         newShop[purchaseIndex] = undefined
 
         return {
@@ -110,14 +162,44 @@ export class Game {
 
     static sellUnit(champPool: Unit[], champBench: (Unit|undefined)[], sellIndex: number) {
         const newBench = [...champBench]
-        newBench[sellIndex] = undefined
         const newChampPool = [...champPool]
         const unitToSell: Unit = champBench[sellIndex]!
-        newChampPool.push(unitToSell)
+
+        newBench[sellIndex] = undefined
+
+        switch(unitToSell.stars) {
+            case 1: 
+                newChampPool.push(unitToSell)
+                break   
+            case 2:
+                newChampPool.push(...Array(3).fill(new Unit(unitToSell.name, unitToSell.traits, unitToSell.cost, 1)))
+                break
+            case 3:
+                newChampPool.push(...Array(9).fill(new Unit(unitToSell.name, unitToSell.traits, unitToSell.cost, 1)))
+                break
+            default: break;
+        }        
         return {
             newBench, 
             newChampPool
         }
+    }
+
+    static getRollPercentages(level: LevelRange) {
+        const percentages = rollOddsData[`level-${level}`]
+        return percentages
+    }
+
+    static determineActiveTraits(bench: (Unit|undefined)[]) {
+        const newActiveTraits: any = {}
+        bench.forEach(unit => {
+            if(!unit) return
+            unit.traits.forEach(trait => {
+                if(trait in newActiveTraits) newActiveTraits[trait]++
+                else newActiveTraits[trait] = 1
+            })
+        })
+        return newActiveTraits
     }
 
 }

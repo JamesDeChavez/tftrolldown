@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import Unit from './Unit'
 import EmptyUnit from './EmptyUnit'
-import { GameContext } from '../../App'
+import { GameContext } from '../../GameContext'
 import './styles.css'
 
 const ShopUnits = () => {

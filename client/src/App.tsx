@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Bench from './components/Bench';
 import Gold from './components/Gold';
 import Percentages from './components/Percentages';
@@ -8,37 +8,9 @@ import Level from './components/Level';
 import Traits from './components/Traits';
 import GameForm from './components/GameForm';
 import { Game, LevelRange, Unit } from './game/classes';
+import { GameContext } from './GameContext';
+import GameTimer from './components/GameTimer';
 import './App.css';
-
-export const GameContext = React.createContext<{
-  level: LevelRange,
-  setLevel: React.Dispatch<React.SetStateAction<LevelRange>>,
-  cumulativeLevel: number,
-  setCumulativeLevel: React.Dispatch<React.SetStateAction<number>>,
-  gold: number,
-  setGold: React.Dispatch<React.SetStateAction<number>>,
-  champPool: Unit[],
-  setChampPool: React.Dispatch<React.SetStateAction<Unit[]>>,
-  champShop: (Unit|undefined)[],
-  setChampShop: React.Dispatch<React.SetStateAction<(Unit|undefined)[]>>,
-  champBench: (Unit|undefined)[],
-  setChampBench: React.Dispatch<React.SetStateAction<(Unit|undefined)[]>>,
-  gameActive: boolean
-}>({
-  level: 7,
-  setLevel: () => {},
-  cumulativeLevel: 0,
-  setCumulativeLevel: () => {},
-  gold: 50,
-  setGold: () => {},
-  champPool: [],
-  setChampPool: () => {},
-  champShop: [],
-  setChampShop: () => {},
-  champBench: [],
-  setChampBench: () => {},
-  gameActive: false
-})
 
 const App = () => {
   const [level, setLevel] = useState<LevelRange>(7)
@@ -49,31 +21,61 @@ const App = () => {
   const [champShop, setChampShop] = useState<(Unit|undefined)[]>([])
   const [champBench, setChampBench] = useState<(Unit|undefined)[]>(Array(9).fill(undefined))
   const [gameActive, setGameActive] = useState(false)
+  const timeRef = useRef<any>()
+
 
   const startGame = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
+    const startingTime = time
+    const startingGold = gold
+    const startingLevel = level
+    setChampBench(Array(9).fill(undefined))
     const startingDeck = Game.createStartingDeck()
-    const { newChampPool, newChampShop } = Game.refreshShop(startingDeck, champShop, level)
+    const { newChampPool, newChampShop } = Game.refreshShop(startingDeck, [], level)
     const newCumulativeLevel = Game.startingCumulativeLevel(level)
     setChampPool(newChampPool)
     setChampShop(newChampShop)
     setCumulativeLevel(newCumulativeLevel)
     setGameActive(true)
+    
+    let intervalId = setInterval(() => {
+      console.log(timeRef.current)
+      if (timeRef.current <= 0) {
+        clearInterval(intervalId)
+        setGameActive(false)
+        setTime(startingTime)
+        setGold(startingGold)
+        setLevel(startingLevel)
+      }
+      else setTime(prevState => prevState - 1)
+    }, 1000)
   }
 
   useEffect(() => {
+    console.log('Total Units',
+      champPool.length + 
+      champShop.filter(champ => champ !== undefined).length +
+      champBench.filter(champ => champ !== undefined).length
+    )
+  })
+
+  useEffect(() => {
+    timeRef.current = time
+  }, [time])
+
+  useEffect(() => {
     if(!gameActive) return
-    console.log(champPool)    
+    console.log('Pool Size: ', champPool.length)    
   }, [champPool])
   
   useEffect(() => {
     if(!gameActive) return
-    console.log(champShop)    
+    console.log('Shop Size:', champShop.filter(champ => champ !== undefined).length) 
   }, [champShop])
 
   useEffect(() => {
     if(!gameActive) return
-    console.log(champBench)    
+    console.log('Bench Size:', champBench.filter(champ => champ !== undefined).length)   
   }, [champBench])
 
   useEffect(() => {
@@ -89,15 +91,17 @@ const App = () => {
       champPool, setChampPool,
       champShop, setChampShop,
       champBench, setChampBench,
-      gameActive
+      gameActive,
+      time, setTime
     }}>
       <div className="App">
+        <GameTimer time={time} gameActive={gameActive} />
         <div className='UpperSection'>
           <div className='TraitsContainer'>
             <Traits/>
           </div>
           <div className='GameFormContainer'>
-            <GameForm startGame={startGame} />
+            <GameForm startGame={startGame} gameActive={gameActive}/>
           </div>
         </div>
         <div className='LowerSection'>

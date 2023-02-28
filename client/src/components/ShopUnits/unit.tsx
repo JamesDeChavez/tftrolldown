@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GameContext } from '../../App'
+import { GameContext } from '../../GameContext'
 import { Game, Unit as UnitClass } from '../../game/classes'
 import './styles.css'
 
@@ -9,16 +9,17 @@ interface Props {
 }
 
 const Unit: React.FC<Props> = ({champData, index}) => {
-    const { champShop, setChampShop, champBench, setChampBench } = useContext(GameContext)
+    const { champShop, setChampShop, champBench, setChampBench, gold, setGold } = useContext(GameContext)
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
-        
-        if (!champData || champBench.filter(champ => champ !== undefined).length === 9) return
+        console.log(gold)
+        if (!champData || champBench.filter(champ => champ !== undefined).length === 9 || gold < champData.cost) return
 
         const { newBench, newShop } = Game.buyUnit(champShop, champBench, index)
         setChampBench(newBench)
         setChampShop(newShop)
+        setGold(prevState => prevState - champData.cost)
     }
 
     const className = 'Unit'
