@@ -1,36 +1,103 @@
 .GameForm {
     width: 100%;
-    background-color: #213847e0;
-    border: solid 1px #917a49;
-    z-index: 2;
+    background-color: #f9f9f9;
+    border: solid 1px #181c26;
+    z-index: 3;
     display: grid;
-    grid-template-rows: auto repeat(4, 1fr);
+    grid-template-columns: 1fr 3fr;
 }
 
-.GameForm_header{
-    text-align: center;
-    color: #FFFFFF;
+.GameForm_leftSection {
+    display: grid;
+    place-content: center;
+    grid-template-rows: 1fr 4fr 1fr;
 }
 
-.GameForm_label,
-.GameForm_number {
-    color: #FFFFFF;
+.GameForm_optionsHeader {
+    place-self: end center;
+}
+
+.GameForm_inputsContainer {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
 }
 
 .GameForm_inputContainer {
+    text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+    gap: 1rem;
 }
 
 .GameForm_buttonsContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
 }
 
-.GameForm_formButtonsContainer {
+.GameForm_button {
+    width: 1.5rem;
+    height: auto;
+    color: #181c26;
+}
+
+.GameForm_button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #2a5862;
+}
+
+.GameForm_number {
+    align-self: center;
+}
+
+.GameForm_formButtonsContainer{
+    text-align: center;
+}
+
+.GameForm_formButton {
+    background-color: #181c26;
+    border: solid 1px #2a5862;
+    color: #FFFFFF;
+    padding: .5rem 2rem;
+}
+
+.GameForm_formButton:hover {
+    background-color: #2a5862;
+    transform: scale(1.05);
+}
+
+.GameForm_rightSection {
     display: grid;
-    place-items: center;
-    gap: 2rem;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    background-image: url('../../assets/CelebrationBg_Arcade_2019.png');
+    background-position: center;
+    color: #f9f9f9;
+    position: relative;
+    padding: 1rem;
+}
+
+.GameForm_overlay {
+    position: absolute;
+    background-color: #181c26;
+    width: 100%;
+    height: 100%;
+    opacity: 60%;
+    z-index: 1;
+}
+
+.GameForm_navContainer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 1rem;
+}
+
+.GameForm_navButton {
+    color: #FFFFFF;
+    border: none;
+}
+
+.GameForm_activeNav {
+    border-bottom: solid 1px #FFFFFF;
 }

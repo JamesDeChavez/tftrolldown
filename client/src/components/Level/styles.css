@@ -1,8 +1,8 @@
 .Level {
     display: flex;
     justify-content: space-between;
-    border: solid 1px #917a49;
-    background-color: #213847;
+    background-color: #181c26;
+    border: solid 1px #2a5862;
     color: #FFFFFF;
     padding: .5rem;
 }

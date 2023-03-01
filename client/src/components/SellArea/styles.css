@@ -1,8 +1,8 @@
 .SellArea {
     display: grid;
     place-content: center;
-    border: solid 1px #917a49;
-    background-color: #213847;
+    border: solid 1px #181c26;
+    background-color: #2a5862;
     color: #FFFFFF;
     font-size: 1.5rem;
     z-index: 3;

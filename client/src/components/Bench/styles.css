@@ -10,13 +10,13 @@
     grid-template-rows: 8fr 2fr;
     border: solid 1px #0f1c24;
     display: grid;
-    background-color: #b5a775;
+    background-color: #826391eb;
     z-index: 2;
 }
 
 .BenchUnit:hover {
     cursor: pointer;
-    opacity: 50%;
+    transform: scale(0.95);
 }
 
 .BenchUnit_imageContainer {
@@ -41,6 +41,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: solid 1px #000000;
+    background-color: #181c26;
+    border: solid 1px #2a5862;
+    color: #FFFFFF;
     border-radius: 2rem;
+    font-size: .8rem;
 }

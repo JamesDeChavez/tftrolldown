@@ -10,8 +10,8 @@ import GameForm from './components/GameForm';
 import { Game, LevelRange, Unit } from './game/classes';
 import { GameContext } from './GameContext';
 import GameTimer from './components/GameTimer';
-import './App.css';
 import SellArea from './components/SellArea';
+import './App.css';
 
 const App = () => {
   const [level, setLevel] = useState<LevelRange>(7)
@@ -21,10 +21,15 @@ const App = () => {
   const [champPool, setChampPool] = useState<Unit[]>([])
   const [champShop, setChampShop] = useState<(Unit|undefined)[]>(Array(5).fill(undefined))
   const [champBench, setChampBench] = useState<(Unit|undefined)[]>(Array(9).fill(undefined))
+  const [activeTraits, setActiveTraits] = useState<any>({})
   const [gameActive, setGameActive] = useState(false)
   const [sellActive, setSellActive] = useState(false)
   const [sellAreaHovered, setSellAreaHovered] = useState(false)
+  const [gameStats, setGameStats] = useState<any>()
+  const [gameHistory, setGameHistory] = useState<any>()
   const timeRef = useRef<any>()
+  const teamRef = useRef<any>()
+  const traitRef = useRef<any>()
 
   const startGame = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
@@ -42,7 +47,14 @@ const App = () => {
     
     let intervalId = setInterval(() => {
       if (timeRef.current <= 0) {
-        clearInterval(intervalId)
+        clearInterval(intervalId)        
+        setGameStats({
+          startingLevel: startingLevel,
+          startingGold: startingGold,
+          startingTime: startingTime,
+          finalTeam: teamRef.current,
+          finalTraits: traitRef.current
+        })
         setGameActive(false)
         setTime(startingTime)
         setGold(startingGold)
@@ -76,7 +88,28 @@ const App = () => {
 
   useEffect(() => {
     timeRef.current = time
-  }, [time])
+    if (timeRef.current === 0) {
+      teamRef.current = champBench
+      traitRef.current = activeTraits
+    }
+  }, [time, champBench, activeTraits])
+
+  useEffect(() => {
+    if (!gameActive) {
+      const oldStorage = window.sessionStorage.getItem("sessionGames")
+      if (!oldStorage && gameStats) {
+        window.sessionStorage.setItem("sessionGames", JSON.stringify([gameStats]))
+        setGameHistory([gameStats])
+      }
+      else if (oldStorage && gameStats) {
+        const newStorage = [...JSON.parse(oldStorage)]
+        newStorage.unshift(gameStats)
+        window.sessionStorage.setItem("sessionGames", JSON.stringify(newStorage))
+        setGameHistory(newStorage)
+      }
+      else if (oldStorage && !gameStats) setGameHistory(JSON.parse(oldStorage))
+    }
+  }, [gameActive, gameStats])
 
   return (
     <GameContext.Provider value={{
@@ -89,7 +122,9 @@ const App = () => {
       gameActive,
       time, setTime,
       sellActive, setSellActive,
-      sellAreaHovered, setSellAreaHovered
+      sellAreaHovered, setSellAreaHovered,
+      activeTraits, setActiveTraits,
+      gameHistory, setGameHistory
     }}>
       <div className="App">
         <GameTimer time={time} gameActive={gameActive} />

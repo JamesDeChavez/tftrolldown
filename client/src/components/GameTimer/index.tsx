@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-regular-svg-icons'
 import './styles.css'
 
 interface Props {
@@ -9,7 +11,7 @@ const GameTimer: React.FC<Props> = ({time, gameActive}) => {
     const className = 'GameTimer'
     return (
         <div className={className} style={{display: gameActive ? 'flex' : 'none'}}>
-            <p className={`${className}_text`}>[  ]</p>
+            <FontAwesomeIcon icon={faClock} className={`${className}_clock`} />
             <p className={`${className}_text`}>{time}</p>
         </div>
     )

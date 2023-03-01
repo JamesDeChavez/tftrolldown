@@ -2,10 +2,29 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
 body, h1, h2, p {
     margin: 0;
+}
+
+button {
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .App {

@@ -2,13 +2,14 @@
     position: absolute;
     top: 1%;
     left: 50%;
-    background-color: #213847;
-    border: solid 1px #917a49;
+    background-color: #181c26;
+    border: solid 1px #2a5862;
     padding: 1rem 1rem;
     display: grid;
     gap: 1rem;
 }
 
+.GameTimer_clock,
 .GameTimer_text {
     color: #FFFFFF;
 }

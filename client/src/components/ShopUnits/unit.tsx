@@ -18,8 +18,8 @@ const colorForEachCost = {
 
 const Unit: React.FC<Props> = ({champData, index}) => {
     const { champShop, setChampShop, champBench, setChampBench, gold, setGold, gameActive } = useContext(GameContext)
-    let backgroundColor: string = '#213847'
-    let borderColor: string = '#917a49'
+    let backgroundColor: string = '#2a5862'
+    let borderColor: string = '#181c26'
     let borderThickness: string = '1px'
     let unitImage
     let champNameForImage

@@ -21,7 +21,11 @@ export const GameContext = React.createContext<{
     sellActive: boolean,
     setSellActive: React.Dispatch<React.SetStateAction<boolean>>,
     sellAreaHovered: boolean,
-    setSellAreaHovered: React.Dispatch<React.SetStateAction<boolean>>
+    setSellAreaHovered: React.Dispatch<React.SetStateAction<boolean>>,
+    activeTraits: any,
+    setActiveTraits: React.Dispatch<React.SetStateAction<any>>,
+    gameHistory: any[],
+    setGameHistory: React.Dispatch<React.SetStateAction<any>>, 
   }>({
     level: 7,
     setLevel: () => {},
@@ -41,5 +45,9 @@ export const GameContext = React.createContext<{
     sellActive: false,
     setSellActive: () => {},
     sellAreaHovered: false,
-    setSellAreaHovered: () => {}
+    setSellAreaHovered: () => {},
+    activeTraits: {},
+    setActiveTraits: () => {},
+    gameHistory: [],
+    setGameHistory: () => {}
   })

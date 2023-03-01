@@ -19,22 +19,6 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
         unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
     }
 
-    const sellUnit = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        e.preventDefault()
-        if (!champData || !gameActive) return      
-
-        let goldReceived = champData.cost * Math.pow(3, champData.stars - 1)
-
-        if (champData.stars >= 2) goldReceived-- 
-
-        const { newBench, newChampPool} =  Game.sellUnit(champPool, champBench, index)
-        
-        setGold(prevState => prevState + goldReceived)
-        setChampBench(newBench)
-        setChampPool(newChampPool)
-        setHovered(false)        
-    }
-
     const handleKeydownEvent = (e: KeyboardEvent) => {
         e.preventDefault()
         if (!champData || !gameActive || !hovered) return
@@ -65,7 +49,7 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
     }
 
     const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-        setSellActive(true)
+        if (gameActive) setSellActive(true)
     }
 
     const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
@@ -100,8 +84,7 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
             <div className={`${className}_empty`}></div>
         :
             <div 
-                className={className} 
-                onClick={sellUnit} 
+                className={className}
                 onMouseEnter={handleMouseEnter} 
                 onMouseLeave={handleMouseLeave} 
                 onDragStart={handleDragStart}

@@ -1,8 +1,8 @@
 .Percentages {
     display: flex;
     justify-content: space-around;
-    border: solid 1px #917a49;
-    background-color: #213847;
+    background-color: #181c26;
+    border: solid 1px #2a5862;
     padding: .5rem;
 }
 

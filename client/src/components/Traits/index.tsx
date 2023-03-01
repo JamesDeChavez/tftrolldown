@@ -1,12 +1,10 @@
-import { act } from '@testing-library/react'
 import { useContext, useEffect, useState } from 'react'
 import { GameContext } from '../../GameContext'
 import { Game } from '../../game/classes'
 import './styles.css'
 
 const Traits = () => {
-    const { champBench } = useContext(GameContext)
-    const [activeTraits, setActiveTraits] = useState<any>({})
+    const { champBench, activeTraits, setActiveTraits } = useContext(GameContext)
 
     useEffect(() => {
         const newActiveTraits = Game.determineActiveTraits(champBench)
