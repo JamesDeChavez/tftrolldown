@@ -1,15 +1,7 @@
 [
     {
-        "name": "Civilian",
+        "name": "Riftwalker",
         "effects": [
-            {
-                "minUnits": 1,
-                "maxUnits": 1
-            },
-            {
-                "minUnits": 2,
-                "maxUnits": 2
-            },
             {
                 "minUnits": 3,
                 "maxUnits": 25000
@@ -55,18 +47,18 @@
         "effects": [
             {
                 "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
                 "maxUnits": 4
             },
             {
                 "minUnits": 5,
-                "maxUnits": 6
+                "maxUnits": 5
             },
             {
-                "minUnits": 7,
-                "maxUnits": 8
-            },
-            {
-                "minUnits": 9,
+                "minUnits": 6,
                 "maxUnits": 25000
             }
         ]
@@ -115,6 +107,23 @@
         ]
     },
     {
+        "name": "Quickdraw",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            },
+            {
+                "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
         "name": "Mascot",
         "effects": [
             {
@@ -127,10 +136,6 @@
             },
             {
                 "minUnits": 6,
-                "maxUnits": 7
-            },
-            {
-                "minUnits": 8,
                 "maxUnits": 25000
             }
         ]
@@ -179,6 +184,15 @@
         ]
     },
     {
+        "name": "Parallel",
+        "effects": [
+            {
+                "minUnits": 2,
+                "maxUnits": 2
+            }
+        ]
+    },
+    {
         "name": "Ox Force",
         "effects": [
             {
@@ -191,20 +205,7 @@
             },
             {
                 "minUnits": 6,
-                "maxUnits": 7
-            },
-            {
-                "minUnits": 8,
                 "maxUnits": 25000
-            }
-        ]
-    },
-    {
-        "name": "Arsenal",
-        "effects": [
-            {
-                "minUnits": 1,
-                "maxUnits": 1
             }
         ]
     },
@@ -254,19 +255,19 @@
         "name": "Star Guardian",
         "effects": [
             {
-                "minUnits": 3,
-                "maxUnits": 4
+                "minUnits": 2,
+                "maxUnits": 3
             },
             {
-                "minUnits": 5,
-                "maxUnits": 6
+                "minUnits": 4,
+                "maxUnits": 5
             },
             {
-                "minUnits": 7,
-                "maxUnits": 8
+                "minUnits": 6,
+                "maxUnits": 7
             },
             {
-                "minUnits": 9,
+                "minUnits": 8,
                 "maxUnits": 25000
             }
         ]
@@ -280,6 +281,27 @@
             },
             {
                 "minUnits": 3,
+                "maxUnits": 3
+            },
+            {
+                "minUnits": 4,
+                "maxUnits": 25000
+            }
+        ]
+    },
+    {
+        "name": "InfiniTeam",
+        "effects": [
+            {
+                "minUnits": 3,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
+                "maxUnits": 6
+            },
+            {
+                "minUnits": 7,
                 "maxUnits": 25000
             }
         ]
@@ -324,10 +346,14 @@
         "effects": [
             {
                 "minUnits": 3,
-                "maxUnits": 5
+                "maxUnits": 4
             },
             {
-                "minUnits": 6,
+                "minUnits": 5,
+                "maxUnits": 6
+            },
+            {
+                "minUnits": 7,
                 "maxUnits": 25000
             }
         ]
@@ -354,7 +380,7 @@
         ]
     },
     {
-        "name": "Recon",
+        "name": "Sureshot",
         "effects": [
             {
                 "minUnits": 2,
@@ -366,19 +392,10 @@
             },
             {
                 "minUnits": 4,
-                "maxUnits": 999
-            }
-        ]
-    },
-    {
-        "name": "Sureshot",
-        "effects": [
-            {
-                "minUnits": 2,
-                "maxUnits": 3
+                "maxUnits": 4
             },
             {
-                "minUnits": 4,
+                "minUnits": 5,
                 "maxUnits": 25000
             }
         ]
@@ -426,6 +443,10 @@
             },
             {
                 "minUnits": 4,
+                "maxUnits": 4
+            },
+            {
+                "minUnits": 5,
                 "maxUnits": 25000
             }
         ]

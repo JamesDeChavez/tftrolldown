@@ -25,7 +25,11 @@ const Unit: React.FC<Props> = ({champData, index}) => {
     let champNameForImage
     if (champData) { 
         champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
-        unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
+        try {
+            unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
+        } catch (error) {
+            unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8_Stage2.png`)
+        }
         borderThickness = '3px'
         switch(champData.cost) {
             case 1: 

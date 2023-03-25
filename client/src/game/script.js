@@ -1,9 +1,9 @@
 const fs = require('fs')
 
 //Setup Variables to Update before running Script
-const extractedData = require('./DataFiles/en_us.json') // file comes from https://raw.communitydragon.org/ > 'latest/' folder > 'cdragon/' folder > 'tft/' folder
+const extractedData = require('./DataFiles/en_us2.json') // file comes from https://raw.communitydragon.org/ > 'latest/' folder > 'cdragon/' folder > 'tft/' folder
 const { setData } = extractedData
-const currentSet = 'TFTSet8' // 'mutator' field from file setData file above
+const currentSet = 'TFTSet8_Stage2' // 'mutator' field from file setData file above
 const setNumber = "8" // choose the correct set Number to use as property name of sets Object
 const traitMinimums = extractedData.sets[setNumber].traits
 
