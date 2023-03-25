@@ -30,7 +30,7 @@ ul {
 .App {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: 1fr auto;
     background-image: url('./assets/map.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,4 +82,9 @@ ul {
 .ShopContainer {
     grid-template-columns: 1fr 5fr;
     gap: .2rem;
+    height: 100%;
+}
+
+.RightShop {
+    position: relative;
 }

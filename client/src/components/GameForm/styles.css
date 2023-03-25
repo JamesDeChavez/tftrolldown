@@ -74,7 +74,7 @@
     background-position: center;
     color: #f9f9f9;
     position: relative;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .GameForm_overlay {
@@ -100,4 +100,27 @@
 
 .GameForm_activeNav {
     border-bottom: solid 1px #FFFFFF;
+}
+
+@media screen and (max-height: 800px) {
+    .GameForm_rightSection {
+        gap: 0;
+    }
+
+    .GameForm_inputsContainer {
+        gap: 1rem;
+    }
+    
+    .GameForm_inputContainer {
+        gap: 0.5rem;
+    } 
+
+    .GameForm_label,
+    .GameForm_number {
+        font-size: 0.8rem;
+    }
+
+    .GameForm_optionsHeader {
+        font-size: 1rem;
+    }
 }

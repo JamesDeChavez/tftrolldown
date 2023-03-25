@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../../GameContext'
 import { Game, Unit as UnitClass } from '../../game/classes'
+import defaultImage from '../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png'
 import './styles.css'
 
 interface Props {
@@ -30,7 +31,7 @@ const Unit: React.FC<Props> = ({champData, index}) => {
         } catch (error) {
             unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8_Stage2.png`)
         }
-        borderThickness = '3px'
+        borderThickness = '1px'
         switch(champData.cost) {
             case 1: 
                 backgroundColor = colorForEachCost[1]; 
@@ -80,7 +81,20 @@ const Unit: React.FC<Props> = ({champData, index}) => {
             <div className={`${className}_empty`} style={{
                 backgroundColor: backgroundColor,
                 border: `solid ${borderThickness} ${borderColor}`
-            }}></div>
+            }}>
+                <div className={`${className}_imageContainer`}>
+                    <img className={`${className}_image`} src={defaultImage} alt="unitImage" draggable={false} style={{ opacity: 0 }}/>
+                    <div className={`${className}_traitsContainer`}>
+                        <p style={{ color: backgroundColor, userSelect: 'none' }}>Trait</p>
+                        <p style={{ color: backgroundColor, userSelect: 'none' }}>Trait</p>
+                    </div>
+                </div>
+                <div className={`${className}_nameplateContainer`}>
+                    <p style={{ color: backgroundColor, userSelect: 'none' }}>No Champ</p>
+                    <p style={{ color: backgroundColor, userSelect: 'none' }}>{`0 G`}</p>
+                </div>
+
+            </div>
         :
             <div className={className} onClick={handleClick} style={{
                 backgroundColor: backgroundColor,

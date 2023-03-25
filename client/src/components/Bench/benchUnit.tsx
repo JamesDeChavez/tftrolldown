@@ -44,7 +44,7 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
 
     const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
-        setHovered(true)     
+        setHovered(true)
     }
 
     const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -52,11 +52,13 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
         setHovered(false)
     }
 
-    const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
+    const handleDragEnter = (e: React.DragEvent<HTMLDivElement>) => {
+        console.log('drag start')
         if (gameActive) setSellActive(true)
     }
 
     const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+        console.log('drag end')
         if (!champData || !gameActive) return 
         
         if (sellAreaHovered) {
@@ -88,10 +90,10 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
             <div className={`${className}_empty`}></div>
         :
             <div 
-                className={className}
+                className={className} 
                 onMouseEnter={handleMouseEnter} 
                 onMouseLeave={handleMouseLeave} 
-                onDragStart={handleDragStart}
+                onDragEnter={handleDragEnter}
                 onDragEnd={handleDragEnd}
                 draggable
             >

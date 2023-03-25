@@ -30,3 +30,32 @@
 .Instructions_link:hover {
     color: #0000FF;
 }
+
+@media screen and (max-width: 1600px) {
+    
+.Instructions_header {
+    font-size: 1.5rem;
+}
+
+.Instructions_list {
+    font-size: 1rem;
+}
+
+}
+
+@media screen and (max-height: 850px) {
+    .Instructions {
+        gap: 0.5rem;
+    }
+    
+    .Instructions_header {
+        font-size: 1rem;
+    }
+    
+    .Instructions_list {
+        font-size: 0.8rem;
+        gap: 0.5rem;
+    }
+    
+}
+    

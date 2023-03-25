@@ -7,6 +7,7 @@
     background-color: #2a5862e0;
     border: solid 1px #181c26;
     padding-top: .5rem;
+    overflow: hidden;
 }
 
 .Traits_header {
@@ -21,4 +22,20 @@
 
 .Traits_trait {
     display: grid;
+}
+
+@media screen and (max-width: 1600px) {
+    .Traits_header {
+        font-size: 1rem;
+    }
+
+    .Traits_trait {
+        font-size: 0.8rem;
+    }
+    
+}
+
+@media screen and (max-height: 850px) {
+    
+    
 }

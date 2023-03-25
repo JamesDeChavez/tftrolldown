@@ -126,7 +126,7 @@ const App = () => {
       activeTraits, setActiveTraits,
       gameHistory, setGameHistory
     }}>
-      <div className="App">
+      <div className="App" >
         <GameTimer time={time} gameActive={gameActive} />
         <div className='UpperSection'>
           <div className='TraitsContainer'>
@@ -147,11 +147,12 @@ const App = () => {
           </div>
           <div className='ShopContainer'>
             <ShopButtons/>
-            {!sellActive ?
+            <div className={`RightShop`}>
               <ShopUnits />
-            :
-              <SellArea setSellAreaHovered={setSellAreaHovered} />
-            }
+              { sellActive && <SellArea setSellAreaHovered={setSellAreaHovered} /> }
+            </div>
+            
+            
           </div>
         </div>
       </div>

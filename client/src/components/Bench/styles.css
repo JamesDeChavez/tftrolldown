@@ -7,7 +7,6 @@
 .BenchUnit_empty,
 .BenchUnit {
     display: grid;
-    grid-template-rows: 8fr 2fr;
     border: solid 1px #0f1c24;
     display: grid;
     background-color: #826391eb;
@@ -30,11 +29,12 @@
     width: 80%;
     height: auto;
     aspect-ratio: 1/1;
-    top: -70%;
+    top: -300%;
     justify-self: center;
     object-fit: cover;
     object-position: right;
     border-radius: 4rem;
+    z-index: 2;
 }
 
 .BenchUnit_nameplateContainer {
