@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react'
-import { GameContext } from '../../GameContext'
+import { GameContext } from '../../game/GameContext'
 import { Game, Unit } from '../../game/classes'
 import './styles.css'
 

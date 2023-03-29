@@ -1,5 +1,5 @@
 import React from 'react'
-import { LevelRange, Unit } from './game/classes'
+import { LevelRange, Unit } from './classes'
 
 
 export const GameContext = React.createContext<{

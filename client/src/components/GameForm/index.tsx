@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
-import { GameContext } from '../../GameContext'
+import { GameContext } from '../../game/GameContext'
 import { Game, LevelRange } from '../../game/classes'
 import Instructions from '../Instructions'
 import GameHistory from '../GameHistory'

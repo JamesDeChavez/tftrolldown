@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GameContext } from '../../GameContext'
+import { GameContext } from '../../game/GameContext'
 import { Game, Unit as UnitClass } from '../../game/classes'
 import defaultImage from '../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png'
 import './styles.css'

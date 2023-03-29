@@ -8,7 +8,7 @@ import Level from './components/Level';
 import Traits from './components/Traits';
 import GameForm from './components/GameForm';
 import { Game, LevelRange, Unit } from './game/classes';
-import { GameContext } from './GameContext';
+import { GameContext } from './game/GameContext';
 import GameTimer from './components/GameTimer';
 import SellArea from './components/SellArea';
 import './App.css';
@@ -33,18 +33,21 @@ const App = () => {
 
   const startGame = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
+    //Initiate starting variables for game
     const startingTime = time
     const startingGold = gold
     const startingLevel = level
-    setChampBench(Array(9).fill(undefined))
     const startingDeck = Game.createStartingDeck()
     const { newChampPool, newChampShop } = Game.refreshShop(startingDeck, [], level)
     const newCumulativeLevel = Game.startingCumulativeLevel(level)
+    
+    setChampBench(Array(9).fill(undefined))
     setChampPool(newChampPool)
     setChampShop(newChampShop)
     setCumulativeLevel(newCumulativeLevel)
     setGameActive(true)
     
+    //Start Interval and Reset Game at End of Interval
     let intervalId = setInterval(() => {
       if (timeRef.current <= 0) {
         clearInterval(intervalId)        
@@ -67,12 +70,16 @@ const App = () => {
   const handleKeydownEvent = (e: KeyboardEvent) => {
     e.preventDefault()
     if (!gameActive) return
+
+    //Shop Refresh Keyboard Shortcut
     if (e.key === 'd' && gold >= 2) {
       const { newChampPool, newChampShop } = Game.refreshShop(champPool, champShop, level)
       setChampPool(newChampPool)
       setChampShop(newChampShop)
       setGold(prevState => prevState - 2)
     }
+
+    //XP Purchase Keyboard Shortcut
     if (e.key === 'f' && gold >= 4 && level < 9) {
       const { newLevel, newCumulativeLevel } = Game.buyXP(level, cumulativeLevel)
       setLevel(newLevel)
@@ -80,7 +87,6 @@ const App = () => {
       setGold(prevState => prevState - 4)
     }
   }
-
   useEffect(() => {
     window.addEventListener('keydown', handleKeydownEvent)
     return () => window.removeEventListener('keydown', handleKeydownEvent)
@@ -94,6 +100,7 @@ const App = () => {
     }
   }, [time, champBench, activeTraits])
 
+  //Record Game Stats and Save to Session Storage
   useEffect(() => {
     if (!gameActive) {
       const oldStorage = window.sessionStorage.getItem("sessionGames")
@@ -150,9 +157,7 @@ const App = () => {
             <div className={`RightShop`}>
               <ShopUnits />
               { sellActive && <SellArea setSellAreaHovered={setSellAreaHovered} /> }
-            </div>
-            
-            
+            </div>       
           </div>
         </div>
       </div>
