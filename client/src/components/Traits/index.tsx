@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { GameContext } from '../../game/GameContext'
 import { Game } from '../../game/classes'
 import './styles.css'
@@ -9,7 +9,7 @@ const Traits = () => {
     useEffect(() => {
         const newActiveTraits = Game.determineActiveTraits(champBench)
         setActiveTraits(newActiveTraits)
-    }, [champBench])
+    }, [champBench, setActiveTraits])
 
     const className = 'Traits'
     return (
