@@ -6,7 +6,7 @@ const Instructions = () => {
         <div className={className}>
             <h1 className={`${className}_header`}>Teamfight Tactics Roll-Down Training</h1>
             <ul className={`${className}_list`}>
-                <li className={`${className}_listitem`}>Practice your one turn roll-down mechanics for the game <a href="https://teamfighttactics.leagueoflegends.com/en-us/" className={`${className}_link`} target='_blank'>Teamfight Tactics</a></li>
+                <li className={`${className}_listitem`}>Practice your one turn roll-down mechanics for the game <a href="https://teamfighttactics.leagueoflegends.com/en-us/" className={`${className}_link`} target='_blank' rel='noreferrer'>Teamfight Tactics</a></li>
                 <li className={`${className}_listitem`}>Select your starting Level, Gold, and Time from the Game Options section to the left and then click Start</li>
                 <li className={`${className}_listitem`}>Build the strongest team you can using the normal TFT game mechanics:</li>
                 <li className={`${className}_listitemIndented`}>1. Refresh Shop - shop button or 'd' key press</li>
