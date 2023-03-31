@@ -1,0 +1,43 @@
+.BenchUnit_empty,
+.BenchUnit {
+    display: grid;
+    border: solid 1px #0f1c24;
+    display: grid;
+    background-color: #826391eb;
+    z-index: 2;
+}
+
+.BenchUnit:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.BenchUnit_imageContainer {
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.BenchUnit_image {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1/1;
+    top: -300%;
+    justify-self: center;
+    object-fit: cover;
+    object-position: right;
+    border-radius: 4rem;
+    z-index: 2;
+}
+
+.BenchUnit_nameplateContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #181c26;
+    border: solid 1px #2a5862;
+    color: #FFFFFF;
+    border-radius: 2rem;
+    font-size: .8rem;
+}

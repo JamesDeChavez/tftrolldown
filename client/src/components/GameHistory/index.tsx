@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { GameContext } from '../../game/GameContext'
-import GameSummary from './GameSummary'
+import GameSummary from '../GameSummary'
 import './styles.css'
 
 const GameHistory = () => {

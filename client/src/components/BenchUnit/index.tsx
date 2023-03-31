@@ -39,7 +39,6 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
             setChampPool(newChampPool)
             setHovered(false) 
         }
-
     }
 
     const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

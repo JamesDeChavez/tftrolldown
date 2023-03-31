@@ -1,0 +1,37 @@
+.Unit_empty,
+.Unit {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    color: #FFFFFF;
+}
+
+.Unit:hover {
+    cursor: pointer;
+    transform: scale(.95);
+}
+
+.Unit_imageContainer {
+    position: relative;
+}
+
+.Unit_image {
+    width: 100%;
+    aspect-ratio: 2/1;
+}
+
+.Unit_blank {
+    width: 100%;
+    aspect-ratio: 2/1;
+}
+
+.Unit_traitsContainer {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.Unit_nameplateContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

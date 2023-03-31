@@ -6,34 +6,10 @@
     gap: 1rem;
 }
 
-.GameHistory_tableHeaders,
-.GameSummary {
+.GameHistory_tableHeaders {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
     justify-items: center;
     align-items: center;
     text-align: center;
-}
-
-.GameSummary_teamContainer {
-    display: flex;
-    gap: .2rem;
-}
-
-.GameSummary_image {
-    width: 3rem;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: right;
-    border-radius: 4rem;
-}
-
-.GameSummary_imageContainer {
-    font-size: .8rem;
-}
-
-.GameSummary_traitsContainer {
-    display: flex;
-    gap: 2rem
 }
