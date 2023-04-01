@@ -27,6 +27,10 @@ const Unit: React.FC<Props> = ({champData, index, setImageLoaded, allImagesLoade
     const [unitImage, setUnitImage] = useState()
 
     useEffect(() => {
+        console.log(`champ_${index}`, champData?.name)
+        setBackgroundColor('#2a5862')
+        setBorderColor('#181c26')
+        setUnitImage(undefined)
         if (champData) {
             const champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
             setUnitImage(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
