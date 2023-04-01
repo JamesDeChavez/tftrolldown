@@ -58,7 +58,6 @@ const Unit: React.FC<Props> = ({champData, index, setImageLoaded, allImagesLoade
 
     useEffect(() => {
         if (unitImage) setImageLoaded(true)
-        else setImageLoaded(false)
     }, [unitImage, setImageLoaded])
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
