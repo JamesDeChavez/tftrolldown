@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { GameContext } from '../../game/GameContext'
 import { Game, Unit as UnitClass } from '../../game/classes'
 import defaultImage from '../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png'
@@ -6,7 +6,9 @@ import './styles.css'
 
 interface Props {
     champData: UnitClass | undefined,
-    index: number
+    index: number, 
+    setImageLoaded: React.Dispatch<React.SetStateAction<boolean>>,
+    allImagesLoaded: boolean
 }
 
 const colorForEachCost = {
@@ -17,41 +19,52 @@ const colorForEachCost = {
     5: 'orange'
 }
 
-const Unit: React.FC<Props> = ({champData, index}) => {
+const Unit: React.FC<Props> = ({champData, index, setImageLoaded, allImagesLoaded}) => {
     const { champShop, setChampShop, champBench, setChampBench, gold, setGold, gameActive } = useContext(GameContext)
-    let backgroundColor: string = '#2a5862'
-    let borderColor: string = '#181c26'
-    let borderThickness: string = '1px'
-    let unitImage
-    let champNameForImage
-    if (champData) { 
-        champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
-        unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
-        borderThickness = '1px'
-        switch(champData.cost) {
-            case 1: 
-                backgroundColor = colorForEachCost[1]; 
-                borderColor = colorForEachCost[1];
-                break;
-            case 2: 
-                backgroundColor = colorForEachCost[2]; 
-                borderColor = colorForEachCost[2];
-                break;
-            case 3: 
-                backgroundColor = colorForEachCost[3]; 
-                borderColor = colorForEachCost[3];
-                break;
-            case 4: 
-                backgroundColor = colorForEachCost[4]; 
-                borderColor = colorForEachCost[4];
-                break;
-            case 5: 
-                backgroundColor = colorForEachCost[5]; 
-                borderColor = colorForEachCost[5];
-                break;
-            default: break;
+
+    const [backgroundColor, setBackgroundColor] = useState('#2a5862')
+    const [borderColor, setBorderColor] = useState('#181c26')
+    const [unitImage, setUnitImage] = useState()
+
+    useEffect(() => {
+        if (champData) { 
+            const champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
+            setUnitImage(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
+            switch(champData.cost) {
+                case 1: 
+                    setBackgroundColor(colorForEachCost[1]) 
+                    setBorderColor(colorForEachCost[1])
+                    break
+                case 2: 
+                    setBackgroundColor(colorForEachCost[2]) 
+                    setBorderColor(colorForEachCost[2])
+                    break
+                case 3: 
+                    setBackgroundColor(colorForEachCost[3]) 
+                    setBorderColor(colorForEachCost[3])
+                    break
+                case 4: 
+                    setBackgroundColor(colorForEachCost[4]) 
+                    setBorderColor(colorForEachCost[4])
+                    break
+                case 5: 
+                    setBackgroundColor(colorForEachCost[5]) 
+                    setBorderColor(colorForEachCost[5])
+                    break
+                default: break;
+            }
         }
-    }
+        else {
+            setBackgroundColor('#2a5862')
+            setBorderColor('#181c26')
+            setUnitImage(undefined)
+        }
+    }, [champData])
+
+    useEffect(() => {
+        if (unitImage) setImageLoaded(true)
+        else setImageLoaded(false)
+    }, [unitImage])    
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
@@ -73,10 +86,10 @@ const Unit: React.FC<Props> = ({champData, index}) => {
 
     const className = 'Unit'
     return (<>
-        {!champData ?
+        {!champData || !allImagesLoaded ?
             <div className={`${className}_empty`} style={{
                 backgroundColor: backgroundColor,
-                border: `solid ${borderThickness} ${borderColor}`
+                border: `solid 1px ${borderColor}`
             }}>
                 <div className={`${className}_imageContainer`}>
                     <img className={`${className}_image`} src={defaultImage} alt="unitImage" draggable={false} style={{ opacity: 0 }}/>
@@ -94,7 +107,7 @@ const Unit: React.FC<Props> = ({champData, index}) => {
         :
             <div className={className} onClick={handleClick} style={{
                 backgroundColor: backgroundColor,
-                border: `solid ${borderThickness} ${borderColor}`
+                border: `solid 1px ${borderColor}`
             }}>
                 <div className={`${className}_imageContainer`}>
                     <img className={`${className}_image`} src={unitImage} alt="unitImage" />
