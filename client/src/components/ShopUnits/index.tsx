@@ -19,6 +19,7 @@ const ShopUnits = () => {
     }, [image1Loaded, image2Loaded, image3Loaded, image4Loaded, image5Loaded, allImagesLoaded])
 
     useEffect(() => {
+        console.log('shop', champShop)
         setImage1Loaded(false)
         setImage2Loaded(false)
         setImage3Loaded(false)
