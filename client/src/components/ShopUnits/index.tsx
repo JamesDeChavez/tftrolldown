@@ -14,7 +14,18 @@ const ShopUnits = () => {
 
     useEffect(() => {
         setAllImagesLoaded(image1Loaded && image2Loaded && image3Loaded && image4Loaded && image5Loaded)
-    }, [image1Loaded, image2Loaded, image3Loaded, image4Loaded, image5Loaded])
+        console.log(image1Loaded, image2Loaded, image3Loaded, image4Loaded, image5Loaded)
+        console.log(allImagesLoaded)
+    }, [image1Loaded, image2Loaded, image3Loaded, image4Loaded, image5Loaded, allImagesLoaded])
+
+    useEffect(() => {
+        setImage1Loaded(false)
+        setImage2Loaded(false)
+        setImage3Loaded(false)
+        setImage4Loaded(false)
+        setImage5Loaded(false)
+        setAllImagesLoaded(false)
+    }, [champShop])
 
     const className = 'ShopUnits'
     return (

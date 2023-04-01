@@ -27,7 +27,7 @@ const Unit: React.FC<Props> = ({champData, index, setImageLoaded, allImagesLoade
     const [unitImage, setUnitImage] = useState()
 
     useEffect(() => {
-        if (champData) { 
+        if (champData) {
             const champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
             setUnitImage(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
             switch(champData.cost) {
@@ -54,17 +54,12 @@ const Unit: React.FC<Props> = ({champData, index, setImageLoaded, allImagesLoade
                 default: break;
             }
         }
-        else {
-            setBackgroundColor('#2a5862')
-            setBorderColor('#181c26')
-            setUnitImage(undefined)
-        }
-    }, [champData])
+    }, [champData]) 
 
     useEffect(() => {
         if (unitImage) setImageLoaded(true)
         else setImageLoaded(false)
-    }, [unitImage])    
+    }, [unitImage, setImageLoaded])
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
@@ -110,7 +105,7 @@ const Unit: React.FC<Props> = ({champData, index, setImageLoaded, allImagesLoade
                 border: `solid 1px ${borderColor}`
             }}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_image`} src={unitImage} alt="unitImage" />
+                    <img className={`${className}_image`} src={unitImage} alt="unitImage"/>
                     <div className={`${className}_traitsContainer`}>
                     {champData.traits.map((trait, i) => {
                         return <p key={i}>{trait}</p>
