@@ -1,4 +1,5 @@
 import { Unit } from '../../game/classes'
+import './styles.css'
 
 interface Props {
     game: any
@@ -18,11 +19,7 @@ const GameSummary: React.FC<Props> = ({game}) => {
                 {teamSize ?
                     game.finalTeam.filter((champ: Unit) => champ).map((unit: Unit) => {
                         champNameForImage = unit.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + unit.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
-                        try {
-                            unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
-                        } catch (error) {
-                            unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8_Stage2.png`)
-                        }
+                        unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
                         return (
                             <div className={`${className}_imageContainer`}>
                                 <img src={unitImage} alt="face" className={`${className}_image`} />
