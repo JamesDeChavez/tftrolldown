@@ -10,24 +10,18 @@ interface Props {
 }
 
 const colorForEachCost = {
-    1: 'grey',
-    2: 'green',
-    3: 'blue',
-    4: 'darkmagenta',
-    5: 'orange'
+    1: 'grey', 2: 'green', 3: 'blue', 4: 'darkmagenta', 5: 'orange'
 }
 
 const Unit: React.FC<Props> = ({champData, index}) => {
     const { champShop, setChampShop, champBench, setChampBench, gold, setGold, gameActive } = useContext(GameContext)
     let backgroundColor: string = '#2a5862'
     let borderColor: string = '#181c26'
-    let borderThickness: string = '1px'
     let unitImage
     let champNameForImage
     if (champData) { 
         champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
         unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
-        borderThickness = '1px'
         switch(champData.cost) {
             case 1: 
                 backgroundColor = colorForEachCost[1]; 
@@ -76,7 +70,7 @@ const Unit: React.FC<Props> = ({champData, index}) => {
         {!champData ?
             <div className={`${className}_empty`} style={{
                 backgroundColor: backgroundColor,
-                border: `solid ${borderThickness} ${borderColor}`
+                border: `solid 1px ${borderColor}`
             }}>
                 <div className={`${className}_imageContainer`}>
                     <img className={`${className}_image`} src={defaultImage} alt="unitImage" draggable={false} style={{ opacity: 0 }}/>
@@ -94,7 +88,7 @@ const Unit: React.FC<Props> = ({champData, index}) => {
         :
             <div className={className} onClick={handleClick} style={{
                 backgroundColor: backgroundColor,
-                border: `solid ${borderThickness} ${borderColor}`
+                border: `solid 1px ${borderColor}`
             }}>
                 <div className={`${className}_imageContainer`}>
                     <img className={`${className}_image`} src={unitImage} alt="unitImage" />
