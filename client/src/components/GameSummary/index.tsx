@@ -37,7 +37,10 @@ const GameSummary: React.FC<Props> = ({game}) => {
                 {traitSize ?
                     Object.keys(game.finalTraits).map(trait => {
                         return (
-                            <div>{`${trait} - ${game.finalTraits[trait]}`}</div>
+                            <div className={`${className}_trait`}>
+                                <span>{trait}</span>
+                                <span>{game.finalTraits[trait]}</span>
+                            </div>
                         )
                     })
                 :
