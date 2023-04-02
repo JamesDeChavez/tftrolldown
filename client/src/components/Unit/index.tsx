@@ -6,14 +6,16 @@ import './styles.css'
 
 interface Props {
     champData: UnitClass | undefined,
-    index: number
+    index: number, 
+    allLoaded: boolean,
+    setLoaded: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const colorForEachCost = {
     1: 'grey', 2: 'green', 3: 'blue', 4: 'darkmagenta', 5: 'orange'
 }
 
-const Unit: React.FC<Props> = ({champData, index}) => {
+const Unit: React.FC<Props> = ({champData, index, allLoaded, setLoaded}) => {
     const { champShop, setChampShop, champBench, setChampBench, gold, setGold, gameActive } = useContext(GameContext)
     let backgroundColor: string = '#2a5862'
     let borderColor: string = '#181c26'
@@ -45,6 +47,9 @@ const Unit: React.FC<Props> = ({champData, index}) => {
                 break;
             default: break;
         }
+        setLoaded(true)
+    } else {
+        setLoaded(true)
     }
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -67,7 +72,7 @@ const Unit: React.FC<Props> = ({champData, index}) => {
 
     const className = 'Unit'
     return (<>
-        {!champData ?
+        {!champData || !allLoaded ?
             <div className={`${className}_empty`} style={{
                 backgroundColor: backgroundColor,
                 border: `solid 1px ${borderColor}`

@@ -25,7 +25,17 @@ export const GameContext = React.createContext<{
     activeTraits: any,
     setActiveTraits: React.Dispatch<React.SetStateAction<any>>,
     gameHistory: any[],
-    setGameHistory: React.Dispatch<React.SetStateAction<any>>, 
+    setGameHistory: React.Dispatch<React.SetStateAction<any>>,
+    image1Loaded: boolean,
+    setImage1Loaded: React.Dispatch<React.SetStateAction<boolean>>,
+    image2Loaded: boolean,
+    setImage2Loaded: React.Dispatch<React.SetStateAction<boolean>>,
+    image3Loaded: boolean,
+    setImage3Loaded: React.Dispatch<React.SetStateAction<boolean>>,
+    image4Loaded: boolean,
+    setImage4Loaded: React.Dispatch<React.SetStateAction<boolean>>,
+    image5Loaded: boolean,
+    setImage5Loaded: React.Dispatch<React.SetStateAction<boolean>>
   }>({
     level: 7,
     setLevel: () => {},
@@ -49,5 +59,15 @@ export const GameContext = React.createContext<{
     activeTraits: {},
     setActiveTraits: () => {},
     gameHistory: [],
-    setGameHistory: () => {}
+    setGameHistory: () => {},
+    image1Loaded: false,
+    setImage1Loaded: () => {},
+    image2Loaded: false,
+    setImage2Loaded: () => {},
+    image3Loaded: false,
+    setImage3Loaded: () => {},
+    image4Loaded: false,
+    setImage4Loaded: () => {},
+    image5Loaded: false,
+    setImage5Loaded: () => {}
   })

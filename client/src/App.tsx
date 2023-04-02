@@ -27,6 +27,11 @@ const App = () => {
   const [sellAreaHovered, setSellAreaHovered] = useState(false)
   const [gameStats, setGameStats] = useState<any>()
   const [gameHistory, setGameHistory] = useState<any>()
+  const [image1Loaded, setImage1Loaded] = useState(false)
+  const [image2Loaded, setImage2Loaded] = useState(false)
+  const [image3Loaded, setImage3Loaded] = useState(false)
+  const [image4Loaded, setImage4Loaded] = useState(false)
+  const [image5Loaded, setImage5Loaded] = useState(false)
   const timeRef = useRef<any>()
   const teamRef = useRef<any>()
   const traitRef = useRef<any>()
@@ -131,7 +136,12 @@ const App = () => {
       sellActive, setSellActive,
       sellAreaHovered, setSellAreaHovered,
       activeTraits, setActiveTraits,
-      gameHistory, setGameHistory
+      gameHistory, setGameHistory,
+      image1Loaded, setImage1Loaded,
+      image2Loaded, setImage2Loaded,
+      image3Loaded, setImage3Loaded,
+      image4Loaded, setImage4Loaded,
+      image5Loaded, setImage5Loaded
     }}>
       <div className="App" >
         <GameTimer time={time} gameActive={gameActive} />
