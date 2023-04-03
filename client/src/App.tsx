@@ -32,6 +32,9 @@ const App = () => {
   const [image3Loaded, setImage3Loaded] = useState(false)
   const [image4Loaded, setImage4Loaded] = useState(false)
   const [image5Loaded, setImage5Loaded] = useState(false)
+  const [xpKeybind, setXpKeybind] = useState('f')
+  const [shopKeybind, setShopKeybind] = useState('d')
+  const [sellKeybind, setSellKeybind] = useState('e')
   const timeRef = useRef<any>()
   const teamRef = useRef<any>()
   const traitRef = useRef<any>()
@@ -73,11 +76,10 @@ const App = () => {
   }
 
   const handleKeydownEvent = (e: KeyboardEvent) => {
-    e.preventDefault()
     if (!gameActive) return
 
     //Shop Refresh Keyboard Shortcut
-    if (e.key === 'd' && gold >= 2) {
+    if (e.key === shopKeybind && gold >= 2) {
       const { newChampPool, newChampShop } = Game.refreshShop(champPool, champShop, level)
       setChampPool(newChampPool)
       setChampShop(newChampShop)
@@ -85,7 +87,7 @@ const App = () => {
     }
 
     //XP Purchase Keyboard Shortcut
-    if (e.key === 'f' && gold >= 4 && level < 9) {
+    if (e.key === xpKeybind && gold >= 4 && level < 9) {
       const { newLevel, newCumulativeLevel } = Game.buyXP(level, cumulativeLevel)
       setLevel(newLevel)
       setCumulativeLevel(newCumulativeLevel)
@@ -141,7 +143,10 @@ const App = () => {
       image2Loaded, setImage2Loaded,
       image3Loaded, setImage3Loaded,
       image4Loaded, setImage4Loaded,
-      image5Loaded, setImage5Loaded
+      image5Loaded, setImage5Loaded,
+      xpKeybind, setXpKeybind,
+      shopKeybind, setShopKeybind,
+      sellKeybind, setSellKeybind
     }}>
       <div className="App" >
         <GameTimer time={time} gameActive={gameActive} />

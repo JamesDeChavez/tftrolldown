@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { GameContext } from '../../game/GameContext'
 import { Game, Unit as UnitClass } from '../../game/classes'
 import defaultImage from '../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png'
@@ -17,40 +17,48 @@ const colorForEachCost = {
 
 const Unit: React.FC<Props> = ({champData, index, allLoaded, setLoaded}) => {
     const { champShop, setChampShop, champBench, setChampBench, gold, setGold, gameActive } = useContext(GameContext)
-    let backgroundColor: string = '#2a5862'
-    let borderColor: string = '#181c26'
-    let unitImage
-    let champNameForImage
-    if (champData) { 
-        champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
-        unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
-        switch(champData.cost) {
-            case 1: 
-                backgroundColor = colorForEachCost[1]; 
-                borderColor = colorForEachCost[1];
-                break;
-            case 2: 
-                backgroundColor = colorForEachCost[2]; 
-                borderColor = colorForEachCost[2];
-                break;
-            case 3: 
-                backgroundColor = colorForEachCost[3]; 
-                borderColor = colorForEachCost[3];
-                break;
-            case 4: 
-                backgroundColor = colorForEachCost[4]; 
-                borderColor = colorForEachCost[4];
-                break;
-            case 5: 
-                backgroundColor = colorForEachCost[5]; 
-                borderColor = colorForEachCost[5];
-                break;
-            default: break;
+
+    const [backgroundColor, setBackgroundColor] = useState('#2a5862')
+    const [borderColor, setBorderColor] = useState('#181c26')
+    const [champNameForImage, setChampNameForImage] = useState('Alistar')
+    const [unitImage, setUnitImage] = useState(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
+
+    useEffect(() => {
+        if (champData) { 
+            setChampNameForImage(champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1))
+            setUnitImage(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
+            switch(champData.cost) {
+                case 1:
+                    setBackgroundColor(colorForEachCost[1]) 
+                    setBorderColor(colorForEachCost[1])
+                    break
+                case 2: 
+                    setBackgroundColor(colorForEachCost[2]) 
+                    setBorderColor(colorForEachCost[2])
+                    break
+                case 3: 
+                    setBackgroundColor(colorForEachCost[3]) 
+                    setBorderColor(colorForEachCost[3])
+                    break
+                case 4: 
+                    setBackgroundColor(colorForEachCost[4]) 
+                    setBorderColor(colorForEachCost[4])
+                    break
+                case 5: 
+                    setBackgroundColor(colorForEachCost[5]) 
+                    setBorderColor(colorForEachCost[5])
+                    break
+                default: break;
+            }
+            setLoaded(true)
+        } else {
+            setBackgroundColor('#2a5862')
+            setBorderColor('#181c26')
+            setChampNameForImage('Alistar')
+            setUnitImage(require(`../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png`))
+            setLoaded(true)
         }
-        setLoaded(true)
-    } else {
-        setLoaded(true)
-    }
+    }, [champData, setLoaded, champNameForImage])
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()

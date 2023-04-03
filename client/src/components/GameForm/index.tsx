@@ -14,7 +14,7 @@ interface Props {
 }
 
 const GameForm: React.FC<Props> = ({startGame, gameActive}) => {
-    const { level, setLevel, setCumulativeLevel, gold, setGold, time, setTime } = useContext(GameContext)
+    const { level, setLevel, setCumulativeLevel, gold, setGold, time, setTime, xpKeybind, setXpKeybind, shopKeybind, setShopKeybind, sellKeybind, setSellKeybind } = useContext(GameContext)
     const [instructionsVisible, setInstructionsVisible] = useState(true)
     const goldRef = useRef<any>()
     const timeRef = useRef<any>()
@@ -116,6 +116,35 @@ const GameForm: React.FC<Props> = ({startGame, gameActive}) => {
                             <FontAwesomeIcon icon={faCircleLeft} className={`${className}_button`} onMouseDown={(e) => handleTimeMouseDown(e, 'left')} onMouseUp={handleTimeMouseUp} /> 
                             <span className={`${className}_number`}>{`${time} sec.`}</span>
                             <FontAwesomeIcon icon={faCircleRight} className={`${className}_button`} onMouseDown={(e) => handleTimeMouseDown(e, 'right')} onMouseUp={handleTimeMouseUp} />
+                        </div>
+                    </div>
+                    <div className={`${className}_inputContainer`}>
+                        <label className={`${className}_label`}>Keybinds:</label>
+                        <div className={`${className}_keybindsContainer`}>
+                            <div className={`${className}_keybindContainer`}>
+                                <span>XP</span>
+                                <input
+                                    type="text" name="xpKeybind" id="xpKeybind" value={xpKeybind} 
+                                    onChange={e => setXpKeybind(e.target.value)}
+                                    className={`${className}_keybind`} maxLength={1}
+                                />
+                            </div>
+                            <div className={`${className}_keybindContainer`}>
+                                <span>Refresh Shop</span>
+                                <input
+                                    type="text" name="shopKeybind" id="shopKeybind" value={shopKeybind} 
+                                    onChange={e => setShopKeybind(e.target.value)}
+                                    className={`${className}_keybind`} maxLength={1}
+                                />
+                            </div>
+                            <div className={`${className}_keybindContainer`}>
+                                <span>Sell Unit</span>
+                                <input
+                                    type="text" name="sellKeybind" id="sellKeybind" value={sellKeybind} 
+                                    onChange={e => setSellKeybind(e.target.value)}
+                                    className={`${className}_keybind`} maxLength={1}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

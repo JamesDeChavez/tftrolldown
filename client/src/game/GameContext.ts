@@ -35,7 +35,13 @@ export const GameContext = React.createContext<{
     image4Loaded: boolean,
     setImage4Loaded: React.Dispatch<React.SetStateAction<boolean>>,
     image5Loaded: boolean,
-    setImage5Loaded: React.Dispatch<React.SetStateAction<boolean>>
+    setImage5Loaded: React.Dispatch<React.SetStateAction<boolean>>,
+    xpKeybind: string,
+    setXpKeybind: React.Dispatch<React.SetStateAction<string>>
+    shopKeybind: string,
+    setShopKeybind: React.Dispatch<React.SetStateAction<string>>
+    sellKeybind: string,
+    setSellKeybind: React.Dispatch<React.SetStateAction<string>>
   }>({
     level: 7,
     setLevel: () => {},
@@ -69,5 +75,11 @@ export const GameContext = React.createContext<{
     image4Loaded: false,
     setImage4Loaded: () => {},
     image5Loaded: false,
-    setImage5Loaded: () => {}
+    setImage5Loaded: () => {},
+    xpKeybind: 'f',
+    setXpKeybind: () => {},
+    shopKeybind: 'd',
+    setShopKeybind: () => {},
+    sellKeybind: 'e',
+    setSellKeybind: () => {}
   })

@@ -10,7 +10,7 @@ interface Props {
 }
 
 const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
-    const { champPool, setChampPool, champBench, setChampBench, setGold, gameActive, sellAreaHovered, setSellAreaHovered} = useContext(GameContext)
+    const { champPool, setChampPool, champBench, setChampBench, setGold, gameActive, sellAreaHovered, setSellAreaHovered, sellKeybind} = useContext(GameContext)
     const [hovered, setHovered] = useState(false)
     let unitImage
     let champNameForImage
@@ -20,10 +20,9 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
     }
 
     const handleKeydownEvent = (e: KeyboardEvent) => {
-        e.preventDefault()
         if (!champData || !gameActive || !hovered) return
         
-        if (e.key === 'e') {
+        if (e.key === sellKeybind) {
             let goldReceived = champData.cost * Math.pow(3, champData.stars - 1)
     
             if (champData.stars >= 2) goldReceived-- 

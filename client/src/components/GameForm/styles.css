@@ -10,7 +10,7 @@
 .GameForm_leftSection {
     display: grid;
     place-content: center;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
 }
 
 .GameForm_optionsHeader {
@@ -32,12 +32,33 @@
 .GameForm_buttonsContainer {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    place-items: center;
 }
 
 .GameForm_button {
     width: 1.5rem;
     height: auto;
     color: #181c26;
+}
+
+.GameForm_keybindsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: -1rem;
+}
+
+.GameForm_keybindContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.GameForm_keybind {
+    width: 2rem;
+    margin: 0 auto;
+    border: none;
+    border-bottom: solid 1px #000000;
+    text-align: center;
+    font-size: 1rem;
 }
 
 .GameForm_button:hover {
@@ -103,6 +124,10 @@
 }
 
 @media screen and (max-height: 800px) {
+    .GameForm_leftSection {
+        grid-template-rows: auto 6fr auto;
+        gap: 0.2rem;
+    }
     .GameForm_rightSection {
         gap: 0;
     }
@@ -116,11 +141,21 @@
     } 
 
     .GameForm_label,
-    .GameForm_number {
+    .GameForm_number,
+    .GameForm_keybind,
+    .GameForm_keybindContainer > span {
         font-size: 0.8rem;
     }
 
     .GameForm_optionsHeader {
         font-size: 1rem;
+    }
+
+    .GameForm_keybindsContainer {
+        margin-top: -0.5rem;
+    }
+
+    .GameForm_formButton {
+        padding: 0.5rem 0.5rem;
     }
 }
