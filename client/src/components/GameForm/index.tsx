@@ -122,7 +122,7 @@ const GameForm: React.FC<Props> = ({startGame, gameActive}) => {
                         <label className={`${className}_label`}>Keybinds:</label>
                         <div className={`${className}_keybindsContainer`}>
                             <div className={`${className}_keybindContainer`}>
-                                <span>XP</span>
+                                <span>Buy XP</span>
                                 <input
                                     type="text" name="xpKeybind" id="xpKeybind" value={xpKeybind} 
                                     onChange={e => setXpKeybind(e.target.value)}
