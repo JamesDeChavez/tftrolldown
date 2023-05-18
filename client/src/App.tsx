@@ -139,11 +139,6 @@ const App = () => {
       sellAreaHovered, setSellAreaHovered,
       activeTraits, setActiveTraits,
       gameHistory, setGameHistory,
-      image1Loaded, setImage1Loaded,
-      image2Loaded, setImage2Loaded,
-      image3Loaded, setImage3Loaded,
-      image4Loaded, setImage4Loaded,
-      image5Loaded, setImage5Loaded,
       xpKeybind, setXpKeybind,
       shopKeybind, setShopKeybind,
       sellKeybind, setSellKeybind

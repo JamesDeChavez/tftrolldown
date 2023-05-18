@@ -6,16 +6,14 @@ import './styles.css'
 
 interface Props {
     champData: UnitClass | undefined,
-    index: number, 
-    allLoaded: boolean,
-    setLoaded: React.Dispatch<React.SetStateAction<boolean>>
+    index: number
 }
 
 const colorForEachCost = {
     1: 'grey', 2: 'green', 3: 'blue', 4: 'darkmagenta', 5: 'orange'
 }
 
-const Unit: React.FC<Props> = ({champData, index, allLoaded, setLoaded}) => {
+const Unit: React.FC<Props> = ({champData, index }) => {
     const { champShop, setChampShop, champBench, setChampBench, gold, setGold, gameActive } = useContext(GameContext)
 
     const [backgroundColor, setBackgroundColor] = useState('#2a5862')
@@ -50,15 +48,13 @@ const Unit: React.FC<Props> = ({champData, index, allLoaded, setLoaded}) => {
                     break
                 default: break;
             }
-            setLoaded(true)
         } else {
             setBackgroundColor('#2a5862')
             setBorderColor('#181c26')
             setChampNameForImage('Alistar')
             setUnitImage(require(`../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png`))
-            setLoaded(true)
         }
-    }, [champData, setLoaded, champNameForImage])
+    }, [champData, champNameForImage])
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
@@ -80,7 +76,7 @@ const Unit: React.FC<Props> = ({champData, index, allLoaded, setLoaded}) => {
 
     const className = 'Unit'
     return (<>
-        {!champData || !allLoaded ?
+        {!champData ?
             <div className={`${className}_empty`} style={{
                 backgroundColor: backgroundColor,
                 border: `solid 1px ${borderColor}`

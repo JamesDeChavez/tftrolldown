@@ -4,7 +4,7 @@ import { Game } from '../../game/classes'
 import './styles.css'
 
 const ShopButtons = () => {
-    const { level, setLevel, cumulativeLevel, setCumulativeLevel, champPool, setChampPool, champShop, setChampShop, gameActive, gold, setGold, setImage1Loaded, setImage2Loaded, setImage3Loaded, setImage4Loaded, setImage5Loaded } = useContext(GameContext)
+    const { level, setLevel, cumulativeLevel, setCumulativeLevel, champPool, setChampPool, champShop, setChampShop, gameActive, gold, setGold } = useContext(GameContext)
     
     const handleRefreshClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
@@ -12,11 +12,6 @@ const ShopButtons = () => {
         const { newChampPool, newChampShop } = Game.refreshShop(champPool, champShop, level)
         setChampPool(newChampPool)
         setChampShop(newChampShop)
-        setImage1Loaded(false)
-        setImage2Loaded(false)
-        setImage3Loaded(false)
-        setImage4Loaded(false)
-        setImage5Loaded(false)
         setGold(prevState => prevState - 2)
     }
 
