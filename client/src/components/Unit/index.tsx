@@ -18,7 +18,6 @@ const Unit: React.FC<Props> = ({champData, index }) => {
     const [borderColor, setBorderColor] = useState('#181c26')
     const [champNameForImage, setChampNameForImage] = useState('Aatrox')
     const [unitImage, setUnitImage] = useState(require(`../../assets/tft-champion/webp/TFT9_${champNameForImage}.TFT_Set9.webp`))
-    const defaultImage = require('../../assets/tft-champion/webp/TFT9_Aatrox.TFT_Set9.webp')
     const purchaseAudio = require('../../assets/audio/Purchase.mp3')
     const combineAudio = require('../../assets/audio/Combine.mp3')
 
@@ -81,19 +80,19 @@ const Unit: React.FC<Props> = ({champData, index }) => {
     return (<>
         {!champData ?
             <div className={`${className}_empty`} style={{
-                backgroundColor: backgroundColor,
-                border: `solid 1px ${borderColor}`
+                backgroundColor: '#2a5862',
+                border: `solid 1px #2a5862`
             }}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_image`} src={defaultImage} alt="unitImage" draggable={false} style={{ opacity: 0 }}/>
+                    <div className={`${className}_blank`}></div>
                     <div className={`${className}_traitsContainer`}>
-                        <p style={{ color: backgroundColor, userSelect: 'none' }}>Trait</p>
-                        <p style={{ color: backgroundColor, userSelect: 'none' }}>Trait</p>
+                        <p style={{ color: '#2a5862', userSelect: 'none' }}>Trait</p>
+                        <p style={{ color: '#2a5862', userSelect: 'none' }}>Trait</p>
                     </div>
                 </div>
                 <div className={`${className}_nameplateContainer`}>
-                    <p style={{ color: backgroundColor, userSelect: 'none' }}>No Champ</p>
-                    <p style={{ color: backgroundColor, userSelect: 'none' }}>{`0 G`}</p>
+                    <p style={{ color: '#2a5862', userSelect: 'none' }}>No Champ</p>
+                    <p style={{ color: '#2a5862', userSelect: 'none' }}>{`0 G`}</p>
                 </div>
 
             </div>
