@@ -16,7 +16,7 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
     let champNameForImage
     if (champData) {
         champNameForImage = champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
-        unitImage = require(`../../assets/tft-champion/TFT9_${champNameForImage}.TFT_Set9.png`)
+        unitImage = require(`../../assets/tft-champion/webp/TFT9_${champNameForImage}.TFT_Set9.webp`)
     }
 
     const handleKeydownEvent = (e: KeyboardEvent) => {
