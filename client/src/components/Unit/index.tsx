@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { GameContext } from '../../game/GameContext'
 import { Game, Unit as UnitClass } from '../../game/classes'
-import defaultImage from '../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png'
+import defaultImage from '../../assets/tft-champion/TFT9_Aatrox.TFT_Set9.png'
 import './styles.css'
 
 interface Props {
@@ -18,13 +18,13 @@ const Unit: React.FC<Props> = ({champData, index }) => {
 
     const [backgroundColor, setBackgroundColor] = useState('#2a5862')
     const [borderColor, setBorderColor] = useState('#181c26')
-    const [champNameForImage, setChampNameForImage] = useState('Alistar')
-    const [unitImage, setUnitImage] = useState(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
+    const [champNameForImage, setChampNameForImage] = useState('Aatrox')
+    const [unitImage, setUnitImage] = useState(require(`../../assets/tft-champion/TFT9_${champNameForImage}.TFT_Set9.png`))
 
     useEffect(() => {
         if (champData) { 
             setChampNameForImage(champData.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + champData.name.replace(/ |'|&/g, '').toLowerCase().slice(1))
-            setUnitImage(require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`))
+            setUnitImage(require(`../../assets/tft-champion/TFT9_${champNameForImage}.TFT_Set9.png`))
             switch(champData.cost) {
                 case 1:
                     setBackgroundColor(colorForEachCost[1]) 
@@ -51,8 +51,8 @@ const Unit: React.FC<Props> = ({champData, index }) => {
         } else {
             setBackgroundColor('#2a5862')
             setBorderColor('#181c26')
-            setChampNameForImage('Alistar')
-            setUnitImage(require(`../../assets/tft-champion/TFT8_Alistar.TFT_Set8.png`))
+            setChampNameForImage('Aatrox')
+            setUnitImage(require(`../../assets/tft-champion/TFT9_Aatrox.TFT_Set9.png`))
         }
     }, [champData, champNameForImage])
 
