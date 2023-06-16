@@ -19,6 +19,8 @@ const Unit: React.FC<Props> = ({champData, index }) => {
     const [champNameForImage, setChampNameForImage] = useState('Aatrox')
     const [unitImage, setUnitImage] = useState(require(`../../assets/tft-champion/webp/TFT9_${champNameForImage}.TFT_Set9.webp`))
     const defaultImage = require('../../assets/tft-champion/webp/TFT9_Aatrox.TFT_Set9.webp')
+    const purchaseAudio = require('../../assets/audio/Purchase.mp3')
+    const combineAudio = require('../../assets/audio/Combine.mp3')
 
     useEffect(() => {
         if (champData) { 
@@ -67,7 +69,9 @@ const Unit: React.FC<Props> = ({champData, index }) => {
             ).length < 2
         ) return
 
-        const { newBench, newShop } = Game.buyUnit(champShop, champBench, index)
+        const { newBench, newShop, unitCombined } = Game.buyUnit(champShop, champBench, index)
+        const audio = unitCombined ? new Audio(combineAudio) : new Audio(purchaseAudio)
+        audio.play()
         setChampBench(newBench)
         setChampShop(newShop)
         setGold(prevState => prevState - champData.cost)

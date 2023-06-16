@@ -12,6 +12,7 @@ interface Props {
 const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
     const { champPool, setChampPool, champBench, setChampBench, setGold, gameActive, sellAreaHovered, setSellAreaHovered, sellKeybind} = useContext(GameContext)
     const [hovered, setHovered] = useState(false)
+    const sellAudio = require('../../assets/audio/Sell.mp3')
     let unitImage
     let champNameForImage
     if (champData) {
@@ -28,7 +29,8 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
             if (champData.stars >= 2) goldReceived-- 
     
             const { newBench, newChampPool} =  Game.sellUnit(champPool, champBench, index)
-            
+            const audio = new Audio(sellAudio)
+            audio.play()
             setGold(prevState => prevState + goldReceived)
             setChampBench(newBench)
             setChampPool(newChampPool)
@@ -61,7 +63,8 @@ const BenchUnit: React.FC<Props> = ({champData, index, setSellActive}) => {
             if (champData.stars >= 2) goldReceived-- 
     
             const { newBench, newChampPool} =  Game.sellUnit(champPool, champBench, index)
-            
+            const audio = new Audio(sellAudio)
+            audio.play()
             setGold(prevState => prevState + goldReceived)
             setChampBench(newBench)
             setChampPool(newChampPool)

@@ -112,6 +112,7 @@ export class Game {
         const replacementIndex = champBench.indexOf(undefined)
         const newBench = [...champBench]
         const newShop = [...champShop]
+        let unitCombined = false
 
         const unitToPurchase = champShop[purchaseIndex]
         const checkForLevelTwo = champBench.filter(unit => 
@@ -127,6 +128,7 @@ export class Game {
         ).length === 2)
         
         if (checkForLevelThree) {
+            unitCombined = true
             const indexesToRemove = newBench.reduce((callback: number[], unit, index) => {
                 if (unit && unit!.name === unitToPurchase!.name) callback.push(index)
                 return callback
@@ -138,6 +140,7 @@ export class Game {
                 newBench[currentIndex!] = undefined
             }
         } else if (checkForLevelTwo) {
+            unitCombined = true
             const indexesToRemove = newBench.reduce((callback: number[], unit, index) => {
                 if (unit && unit.name === unitToPurchase!.name && unit.stars === 1) callback.push(index)
                 return callback
@@ -154,7 +157,8 @@ export class Game {
 
         return {
             newBench,
-            newShop
+            newShop,
+            unitCombined
         }
     }
 
