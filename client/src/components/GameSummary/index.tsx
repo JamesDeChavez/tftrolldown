@@ -19,7 +19,7 @@ const GameSummary: React.FC<Props> = ({game}) => {
                 {teamSize ?
                     game.finalTeam.filter((champ: Unit) => champ).map((unit: Unit) => {
                         champNameForImage = unit.name.replace(/ |'|&/g, '').toLowerCase().charAt(0).toUpperCase() + unit.name.replace(/ |'|&/g, '').toLowerCase().slice(1)
-                        unitImage = require(`../../assets/tft-champion/TFT8_${champNameForImage}.TFT_Set8.png`)
+                        unitImage = require(`../../assets/tft-champion/webp/TFT9_${champNameForImage}.TFT_Set9.webp`)
                         return (
                             <div className={`${className}_imageContainer`}>
                                 <img src={unitImage} alt="face" className={`${className}_image`} />

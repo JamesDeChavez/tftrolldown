@@ -6,7 +6,7 @@ Steps To Update:
 
 3. Add new champion images to /assets folder; README in the /assets folder will have location of new image files
 
-4. Update Unit and BenchUnit components for new image files
+4. Update Unit, BenchUnit and  components for new image files
 
 5. Make any fixes to image file names, as necessary
 
